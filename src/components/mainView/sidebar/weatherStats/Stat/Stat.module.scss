@@ -1,0 +1,28 @@
+.stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+      height: 50px;
+      /* border: 1px solid rgb(179, 179, 179); */
+      background-color: rgba(255, 255, 255, 0.87);
+
+      border-radius: 30px;
+      margin-bottom: 10px;
+      padding: 0 15px 0 15px;
+
+    }
+    .labels {
+        display: flex;
+    }
+  .statLabel {
+      display: flex;
+      align-items: baseline;
+      font-size: 18px;
+  }
+  .unitLabel {
+      font-size: 12px;
+      margin-left: 3px;
+  }
+ .data {
+      font-size: 18px;
+  }

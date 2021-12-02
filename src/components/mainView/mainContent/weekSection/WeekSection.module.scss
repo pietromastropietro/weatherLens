@@ -1,0 +1,11 @@
+.weekSection {
+    h1 {
+        font-size: 24px;
+    }
+}
+.daysContainer {
+    display: grid;
+    grid-template: 110px / repeat(7, 1fr);
+    overflow: auto;
+    margin-top: 10px;
+}
