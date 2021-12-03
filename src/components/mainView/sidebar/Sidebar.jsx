@@ -3,15 +3,15 @@ import style from './Sidebar.module.scss';
 import CurrentWeather from './currentWeather/CurrentWeather';
 import Weatherstats from './weatherStats/WeatherStats';
 
-const Sidebar = ({ weatherData }) => {
-    console.log("data: ", weatherData);
+const Sidebar = ({ weatherData, setCity }) => {
+    // console.log("data: ", weatherData);
     return (
         <div className={style.sidebar}>
-            <Searchbar />
+            <Searchbar setCity={setCity} />
 
-            <CurrentWeather weatherData={weatherData} />
+            <CurrentWeather currentWeatherData={weatherData.current} />
 
-            <Weatherstats weatherData={weatherData} />
+            <Weatherstats dayWeatherData={weatherData.daily[0]} />
         </div>
     );
 }

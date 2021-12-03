@@ -1,0 +1,21 @@
+@use 'static/scss/constants';
+
+main { 
+    // @include constants.main-neumo;
+    @include constants.neumo;
+
+    display: flex;
+    width: 1108px;
+    // height: 700px;
+    border-radius: 30px;
+}
+    
+.separator {
+    @include constants.neumo-inset;
+
+    align-self: center;
+
+    width: 8px;
+    height: calc(100% - 60px);
+    border-radius: 4px;
+}

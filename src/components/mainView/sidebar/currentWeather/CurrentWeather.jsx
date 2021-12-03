@@ -1,25 +1,28 @@
 import { format } from 'date-fns';
+import useImage from 'services/helper/useImage';
 import style from './CurrentWeather.module.scss';
 
-const CurrentWeather = ({ weatherData }) => {
+const CurrentWeather = ({ currentWeatherData }) => {
+    const { image: icon, loading, error } = useImage(currentWeatherData.weather[0].icon);
+
+    const date = format(new Date(currentWeatherData.dt * 1000), 'EEEE, H:mm');
+    const temp = Math.round(currentWeatherData.temp);
+    const forecast = currentWeatherData.weather[0].description;
+
     return (
         <div className={style.currentWeather}>
-            <h1 className={style.cityName}>Temp</h1>
+            <h1 className={style.cityName}>Cityname</h1>
 
-            <p className={style.date}>
-                {format(new Date(weatherData.current.dt * 1000), 'EEEE, H:mm')}
-            </p>
+            <p className={style.date}>{date}</p>
 
-            <figure className={style.icon}>
-                <img src="" alt="weather-icon" />
+            <figure>
+                <img src={icon} alt="weather conditions" />
             </figure>
 
-            <p className={style.temp}>
-                {`${Math.round(weatherData.current.temp)}°C`}
-            </p>
+            <p className={style.temp}>{`${temp}°C`}</p>
             
             <p className={style.forecast}>
-                {weatherData.current.weather[0].description}
+                {forecast}
                 {/* <div id="todayMinMaxForSmartphone"></div> */}
             </p>
         </div>

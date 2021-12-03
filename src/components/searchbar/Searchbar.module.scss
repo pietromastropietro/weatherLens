@@ -1,25 +1,42 @@
-#searchSection {
-    align-self: center;
-    position: absolute;
-    margin-top: 20px;
-}
-#searchBar {
-    display: flex;
-    padding: 10px 15px 10px 20px;
+@use 'static/scss/constants';
+
+.searchContainer {
+    // align-self: center;
+    // position: absolute;
+    // margin-top: 20px;
+    // width: 70%;
+    @include constants.neumo;
     border-radius: 20px;
-    /* border: 1px solid rgb(212, 212, 212);         */
-    background-color: rgb(255, 255, 255);
+    
+    &:focus-within {
+        @include constants.neumo-inset;
+    }
 }
-#search {
-    color: rgb(5, 5, 5);
-    border: none;
-    outline: none;
-    font-size: 14px;
-    background-color: rgba(245, 222, 179, 0);
+.searchbar {
+    // @include constants.neumo-inset;
+
+    display: flex;
+    column-gap: 10px;
+    padding: 10px 20px;
+    // border-radius: 20px;
+
+    input {
+        border: none;
+        outline: none;
+        font-size: 14px;
+        background-color: transparent;
+    }
+
+    img {
+        width: 15px;
+    }
 }
-#searchIcon {
-    width: 15px;
+.results {
+
 }
+
+
+
 .expand {
     border-radius: 20px 20px 0 0 !important;
     border-bottom: none !important;

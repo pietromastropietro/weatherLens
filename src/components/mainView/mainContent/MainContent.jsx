@@ -4,7 +4,7 @@ import WeekSection from './weekSection/WeekSection';
 
 const MainContent = ({ weatherData }) => {
     return (
-        <div id="mainContainer">
+        <div className={style.mainContent}>
 
             <div id="header">
                 {/* <div id="about">
@@ -40,9 +40,9 @@ const MainContent = ({ weatherData }) => {
                 </div> */}
             </div>
 
-            <WeekSection weatherData={weatherData.daily} />
+            <WeekSection dailyWeatherData={weatherData.daily} />
 
-            <TodaySection />
+            <TodaySection hourlyWeatherData={weatherData.hourly} />
         </div>
     );
 }

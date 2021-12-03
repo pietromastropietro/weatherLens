@@ -1,0 +1,21 @@
+@use 'static/scss/constants';
+
+.hour {
+    @include constants.neumo-inset;
+
+    display: grid;
+    grid: 50px / 1fr 1.5fr 6fr 1fr 1fr 1fr;
+    
+    border-radius: 15px;
+    padding: 10px;
+
+    font-size: 18px;
+
+    img {
+        width: 45px;
+    }
+}
+
+
+    
+

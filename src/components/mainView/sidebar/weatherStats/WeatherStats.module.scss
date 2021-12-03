@@ -1,4 +1,6 @@
-
 .weatherStats {
     margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
 }

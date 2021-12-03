@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import MainContent from './components/mainView/mainContent/MainContent'
 import Sidebar from './components/mainView/sidebar/Sidebar';
 import { defaultCity, defaultData } from './default.js'
+import style from './App.module.scss'
 
 const App = () => {
 	const [weatherData, setWeatherData] = useState({
@@ -9,6 +10,8 @@ const App = () => {
 		metric: defaultData,
 		imperial: []
 	});
+
+	const [city, setCity] = useState("");
 
 	useEffect(() => {
 		// Gets weather data for the city (by lat & lon) from the openweatherAPI and returns the JSON
@@ -32,7 +35,8 @@ const App = () => {
 
 	return (
 		<main>
-			<Sidebar weatherData={weatherData.metric} />
+			<Sidebar weatherData={weatherData.metric} setCity={setCity} />
+			<div className={style.separator}></div>
 			<MainContent weatherData={weatherData.metric} />
 		</main>
 	);

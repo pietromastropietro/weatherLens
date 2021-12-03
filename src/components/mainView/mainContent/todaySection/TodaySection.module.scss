@@ -1,72 +1,63 @@
 .todaySection {
+
     h1 {
         margin-top: 70px;
         font-size: 24px;
-        display: flex;
-        justify-content: space-between;
-        width: 190px;
+        // display: flex;
+        // justify-content: space-between;
+        // width: 190px;
     }
 }
-.hoursTable {
+.listContainer {
+    height: 400px;
     overflow: auto;
-    
-    th {
+
+    .labels {
+        display: flex;
+        
         color: rgb(109, 109, 109);
         font-size: 12px;
         font-weight: 300;
-        padding: 0 10px 0 15px;
+        // padding: 0 10px 0 15px;
+    
     }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        row-gap: 20px;
+    }
+
 }
+
+
 // #placeholder {
 //     width: 45px;
 //     justify-self: end;
 // }
 
-.hour {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.767);
-    /* background-color: rgb(255, 255, 255); */
-    display: grid;
-    grid: 50px / 1fr 1.5fr 6fr 1fr 1fr 1fr;
-    margin-top: 5px;
-    border-radius: 20px;
-    padding-left: 15px;
-    align-items: center;
-    font-size: 18px;
-
-    figure {
-        justify-self: end;
-        display: flex;
-     img {
-        width: 45px;
-     }
-    }
-}
 
 
-
-
-
-.time {
-    font-size: 16px;
-}
-.hourForecast {
-    text-transform: capitalize;
-    margin-left: 10px;
-}
-.hourWind, .windUnitLabel {
-    grid-area: 1 / 5 / 1 / 6;
-    justify-self: center;
-}
-.hourRain, .rainUnitLabel {
-    grid-area: 1 / 6 / 1 / 7;
-    justify-self: center;
-}
-.hourWind, .hourRain {
-    margin-bottom: 15px;
-}
-.windUnitLabel, .rainUnitLabel {
-    font-size: 12px;
-    margin-top: 15px;
-}
+// .time {
+//     font-size: 16px;
+// }
+// .hourForecast {
+//     text-transform: capitalize;
+//     margin-left: 10px;
+// }
+// .hourWind, .windUnitLabel {
+//     grid-area: 1 / 5 / 1 / 6;
+//     justify-self: center;
+// }
+// .hourRain, .rainUnitLabel {
+//     grid-area: 1 / 6 / 1 / 7;
+//     justify-self: center;
+// }
+// .hourWind, .hourRain {
+//     margin-bottom: 15px;
+// }
+// .windUnitLabel, .rainUnitLabel {
+//     font-size: 12px;
+//     margin-top: 15px;
+// }

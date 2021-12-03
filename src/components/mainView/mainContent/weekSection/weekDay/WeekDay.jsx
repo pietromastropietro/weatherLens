@@ -1,19 +1,26 @@
 import style from './WeekDay.module.scss'
+import { format } from 'date-fns';
+import useImage from 'services/helper/useImage';
 
-const WeekDay = ({ day, icon, temps }) => {
+const WeekDay = ({ dayData }) => {
+    const { image: icon, loading, error } = useImage(dayData.weather[0].icon)
+
+    const day = format(new Date(dayData.dt * 1000), 'EEE');
+    
+    const temp = {
+        max: Math.round(dayData.temp.max),
+        min: Math.round(dayData.temp.min)
+    }; 
+
     return (
         <div className={style.day}>
-            <p>
-                {/* {format(new Date(weatherData.daily[i + 1].dt * 1000), 'EEE')} */}
-            </p>
+            <p>{day}</p>
 
-            <figure>
-                <img src="" />
-            </figure>
+         
+                <img src={icon} alt="weather conditions" />
+         
 
-            <p>
-                {/* {`${Math.round(weatherData.daily[i + 1].temp.max)}° / ${Math.round(weatherData.daily[i + 1].temp.min)}°`} */}
-            </p>
+            <p>{`${temp.max}° / ${temp.min}°`}</p>
         </div>
     )
 }
