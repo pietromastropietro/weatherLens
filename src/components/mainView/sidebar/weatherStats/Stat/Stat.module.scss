@@ -1,7 +1,8 @@
 @use 'static/scss/constants';
 
 .stat {
-    @include constants.neumo-inset;
+    // @include constants.neumo-inset;
+    background-color: white;
 
     display: flex;
     align-items: center;

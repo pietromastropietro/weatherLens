@@ -36,7 +36,7 @@ const App = () => {
 	return (
 		<main>
 			<Sidebar weatherData={weatherData.metric} setCity={setCity} />
-			<div className={style.separator}></div>
+			{/* <div className={style.separator}></div> */}
 			<MainContent weatherData={weatherData.metric} />
 		</main>
 	);

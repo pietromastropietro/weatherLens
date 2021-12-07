@@ -1,20 +1,31 @@
 @use 'static/scss/constants';
 
 .day {
-    @include constants.neumo-inset;
+    // @include constants.neumo-inset;
+    background-color: white;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 95px;
+    width: 80px;
     height: 100px;
     padding: 10px 10px;
     border-radius: 15px;
-    font-size: 16px;
+
+    p {
+        font-weight: 600;
+        font-size: 14px;
+
+
+        span {
+                color: #b6b6b6;
+            }
+    }
 
     img {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
+    
 }

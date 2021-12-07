@@ -1,18 +1,28 @@
 @use 'static/scss/constants';
 
 .hour {
-    @include constants.neumo-inset;
+    // @include constants.neumo-inset;
+    background-color: white;
 
     display: grid;
-    grid: 50px / 1fr 1.5fr 6fr 1fr 1fr 1fr;
+    grid: 40px / 1fr 1.5fr 6fr 1fr 1fr 1fr;
+    align-items: center;
     
     border-radius: 15px;
     padding: 10px;
 
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 15px;
 
     img {
         width: 45px;
+    }
+
+
+    span {
+        font-size: 12px;
+        font-weight: inherit;
+        color: #b6b6b6;
     }
 }
 

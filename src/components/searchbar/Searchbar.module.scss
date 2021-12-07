@@ -5,12 +5,8 @@
     // position: absolute;
     // margin-top: 20px;
     // width: 70%;
-    @include constants.neumo;
+    // @include constants.neumo;
     border-radius: 20px;
-    
-    &:focus-within {
-        @include constants.neumo-inset;
-    }
 }
 .searchbar {
     // @include constants.neumo-inset;

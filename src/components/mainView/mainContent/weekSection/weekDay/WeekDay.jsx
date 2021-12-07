@@ -16,11 +16,9 @@ const WeekDay = ({ dayData }) => {
         <div className={style.day}>
             <p>{day}</p>
 
-         
-                <img src={icon} alt="weather conditions" />
-         
+            <img src={icon} alt="weather conditions" />
 
-            <p>{`${temp.max}° / ${temp.min}°`}</p>
+            <p>{`${temp.max}°`} <span>{`${temp.min}°`}</span></p>
         </div>
     )
 }

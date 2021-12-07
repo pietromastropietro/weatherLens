@@ -1,13 +1,13 @@
 @use 'static/scss/constants';
 
 .mainContent {
-    background: constants.$neumocolor;
+    // background: constants.$neumocolor;
+    background-color: #f6f6f8;
     // width: 700px;
     // width: 66%;
     width: calc(70% - 80px);
     padding: 40px;
-    border-radius:0 30px 30px 0;
-
+    border-radius:0 50px 50px 0;
 }
 
 

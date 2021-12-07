@@ -48,10 +48,12 @@ html, body, p, h1, h2, h3, h4, h5, h6, button, figure, legend, span, input, fiel
   body {
       /* background: linear-gradient(118deg, rgba(241,241,241,1) 8%, rgba(101, 101, 101, 0.692) 95%); */
     //   background: linear-gradient(to right, #085178b4, #85d8ce94);
-      background: constants.$neumocolor;
+    //   background: constants.$neumocolor;
+    background-color: #d6d7da;
       background-repeat:no-repeat;
       background-attachment:fixed; 
-      font-family: 'Nunito', sans-serif;
+    //   font-family: 'Nunito', sans-serif;
+      font-family: 'Montserrat', sans-serif;
   }
   #root {
     
@@ -487,7 +489,7 @@ html, body, p, h1, h2, h3, h4, h5, h6, button, figure, legend, span, input, fiel
   }
   body {
       background-color: #F5F4F4;
-      font-family: 'Nunito', sans-serif;
+    //   font-family: 'Nunito', sans-serif;
   }
   #sidebar {
       display: flex;

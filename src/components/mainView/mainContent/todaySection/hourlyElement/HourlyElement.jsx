@@ -25,9 +25,9 @@ const HourlyElement = ({ hourlyData }) => {
 
             <p>{`${temp}°`}</p>
 
-            <p>{`${wind}km/h`}</p>
+            <p>{wind} <span>km/h</span></p>
 
-            <p>{`${rain}mm`}</p>
+            <p>{rain} <span>mm</span></p>
 
 
             {/* <div class="hourTile">

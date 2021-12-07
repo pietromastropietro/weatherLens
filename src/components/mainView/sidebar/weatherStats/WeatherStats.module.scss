@@ -1,6 +1,32 @@
 .weatherStats {
-    margin-top: 90px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+
+    font-weight: 600;
+    font-size: 15px;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        width: 170px;
+        // background-color: rgb(173, 173, 101);
+
+        p {
+            font-weight: 600;
+            font-size: 15px;
+    
+            span {
+                font-size: 12px;
+                font-weight: inherit;
+                color: #b6b6b6;
+            }
+        }
+
+        .minTemp{
+            font-size: 15px;
+        }
+    }
+
 }
