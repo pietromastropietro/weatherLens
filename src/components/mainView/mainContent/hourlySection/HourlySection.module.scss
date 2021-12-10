@@ -1,0 +1,82 @@
+.hourlySection {
+   
+}
+.days {
+    display: flex;
+    column-gap: 20px;
+
+    h1 {
+        cursor: pointer;
+        width: fit-content;
+        margin-top: 70px;
+        font-size: 22px;
+        font-weight: 600;
+        padding-bottom: 2px;
+        color: #b6b6b6;
+        transition: 0.2s;
+        border-bottom: 1.5px solid transparent;
+        
+        &.active {
+            color: black;
+            border-bottom: 1.5px solid black;
+        }
+    }
+}
+.labels {
+    // display: flex;
+    display: grid;
+    grid: 40px / 1fr 1.5fr 6fr 1fr 1fr 1fr;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: 600;
+    color: #b6b6b6;
+    
+    // color: rgb(109, 109, 109);
+    // font-size: 12px;
+    // font-weight: 300;
+    // padding: 0 10px 0 15px;
+}
+
+
+
+
+ul {
+    height: 300px;
+    overflow: auto;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    scrollbar-gutter: stable;
+}
+
+// #placeholder {
+//     width: 45px;
+//     justify-self: end;
+// }
+
+
+
+// .time {
+//     font-size: 16px;
+// }
+// .hourForecast {
+//     text-transform: capitalize;
+//     margin-left: 10px;
+// }
+// .hourWind, .windUnitLabel {
+//     grid-area: 1 / 5 / 1 / 6;
+//     justify-self: center;
+// }
+// .hourRain, .rainUnitLabel {
+//     grid-area: 1 / 6 / 1 / 7;
+//     justify-self: center;
+// }
+// .hourWind, .hourRain {
+//     margin-bottom: 15px;
+// }
+// .windUnitLabel, .rainUnitLabel {
+//     font-size: 12px;
+//     margin-top: 15px;
+// }

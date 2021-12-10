@@ -1,7 +1,6 @@
 @use 'static/scss/constants';
 
 .sidebar {
-    // background: constants.$neumocolor;
     background-color: rgba(255, 255, 255, 0.842);
 
     display: flex;
@@ -15,4 +14,3 @@
     // position: relative;
     font-weight: 600;
 }
-

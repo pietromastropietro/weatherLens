@@ -1,20 +1,14 @@
 @use 'static/scss/constants';
 
 .searchContainer {
-    // align-self: center;
-    // position: absolute;
-    // margin-top: 20px;
-    // width: 70%;
-    // @include constants.neumo;
     border-radius: 20px;
+    background-color: #f6f6f8;
+    overflow: hidden;
 }
 .searchbar {
-    // @include constants.neumo-inset;
-
     display: flex;
     column-gap: 10px;
     padding: 10px 20px;
-    // border-radius: 20px;
 
     input {
         border: none;
@@ -25,31 +19,25 @@
 
     img {
         width: 15px;
+        height: 15px;
     }
 }
 .results {
-
+    height: 0;
+    font-size: 14px;
+    
+    &.expand {
+        padding: 0 20px 10px 45px;
+        height: fit-content;
+        animation: expand 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+    
+    li {
+        cursor: pointer;
+    }
 }
 
-
-
-.expand {
-    border-radius: 20px 20px 0 0 !important;
-    border-bottom: none !important;
-}
-#results {
-    display: none;
-    background-color: white;
-    padding: 10px 15px 10px 20px;
-    border-radius: 0 0 20px 20px;
-    border-top: none;
-}
-.show {
-    display: flex !important;
-    flex-direction: column;
-    animation: exp 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-@keyframes exp {
+@keyframes expand {
     0% {
         transform: scaleY(0.4);
         transform-origin: 100% 0%;

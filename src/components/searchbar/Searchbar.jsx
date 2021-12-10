@@ -1,60 +1,73 @@
 import style from './Searchbar.module.scss';
 import icon from 'static/images/search.svg'
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
+import axios from 'axios';
 
-const Searchbar = ({ setCityy }) => {
+const Searchbar = ({ setLocation }) => {
     const [city, setCity] = useState("");
-    const [results, setResults] = useState([]);
-    const [resultsVisibility, setResultsVisibility] = useState(false);
+    const [citiesResults, setCitiesResults] = useState([]);
 
     const handleInput = (e) => {
         setCity(e.target.value);
     }
+    
+    const handleEnterKey = (e) => {
+        // TODO: add regex for input validation
 
-    const handleKeyDown = (e) => {
-        if (e.key === "Enter") {
-            setResultsVisibility(true)
+        if (e.key === "Enter" && /* temp, will use regex */ city !== "") {
+            fetchData(city);
         }
     }
 
     const changeWeatherData = () => {
-        // setCityy(new city)
-
-        // close results tab
-        setResultsVisibility(false)
+        // setLocation(city)
     }
 
-    // Searches the city in the openweather database and returns a group of results
+    // fetch cities from the openweather api (limited to 4 results)
     const fetchData = async (city) => {
-        // toggleModal();
         try {
-            // const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=4&appid=${API_KEY}`, { mode: 'cors' });
+            // const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=4&appid=f1da688d16302a59f515543adff493fe`);
 
-            // toggleModal();
-            // return citiesResults;
+            // temp, for testing
+            const response = {
+                data: [
+                    {
+                        name: "test",
+                        country: "test2"
+                    }
+                ]
+            }
+
+            // console.log("response: " + JSON.stringify(response, null, 2));
+
+            if (response.data.length === 0) {
+                alert("No city found, please try again.");
+            } else {
+                setCitiesResults(response.data);
+            }
         } catch (err) {
             alert('Error, try again. If the error persists, please contact the owner (GitHub link in the "info" section).');
         };
-        // toggleModal();
     }
-
 
     return (
         <div className={style.searchContainer}>
 
             <div className={style.searchbar}>
                 <img src={icon} alt="search-icon" />
-                <input type="text" value={city} onChange={handleInput} onKeyDown={handleKeyDown} placeholder="Search for a city" autocomplete='off' />
+                <input type="text" value={city} onChange={handleInput} onKeyDown={handleEnterKey} placeholder="Search for a city" autoComplete='off' />
             </div>
 
-            {resultsVisibility &&
-            <div className={style.results}>
-                <p onClick={changeWeatherData}>city 1</p>
-                <p>city 2</p>
-                <p>city 3</p>
-            </div>}
-
-            {/* <div id="results"></div> */}
+            <ul className={`${style.results} ${citiesResults.length !== 0 && style.expand}`}>
+                {citiesResults.map(city =>
+                    <li onClick={changeWeatherData}>
+                        {city.state ?
+                            `${city.name}, ${city.state}` :
+                            `${city.name}, ${city.country}`
+                        }
+                    </li>
+                )}
+            </ul>
         </div>
     )
 };
