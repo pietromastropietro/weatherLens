@@ -10,7 +10,7 @@ export const LoadingContext = createContext();
 const App = () => {
 	
 	const [unit, setUnit] = useState('metric');
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 
 	const contextValues = { loading, unit, setUnit}
 
@@ -27,7 +27,7 @@ const App = () => {
 			// toggleModal();
 			try {
 				// const response = [];
-				const response = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&units=${unit}&appid=f1da688d16302a59f515543adff493fe`)
+				const response = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&units=${unit}&appid=`)
 				console.log("fetch");
 				console.log("response: " + JSON.stringify(response, null, 2));
 

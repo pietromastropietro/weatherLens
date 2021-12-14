@@ -18,6 +18,8 @@ const CurrentWeather = ({ currentWeatherData }) => {
 
     return (
         <div className={style.currentWeather}>
+
+            {/* TODO: change loading spinner color */}
             {loadingStatus.loading ? <LoadingSpinner /> :
                 <>
                     <h1 className={style.cityName}>Milan, <span>IT</span></h1>

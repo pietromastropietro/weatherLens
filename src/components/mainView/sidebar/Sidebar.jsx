@@ -9,12 +9,13 @@ const Sidebar = ({ weatherData, setLocation }) => {
         <div className={style.sidebar}>
             <Searchbar setLocation={setLocation} />
 
-            <CurrentWeather currentWeatherData={weatherData.current} />
+            <div>
+                <CurrentWeather currentWeatherData={weatherData.current} />
 
-            <Weatherstats dayWeatherData={weatherData.daily[0]} />
+                <Weatherstats dayWeatherData={weatherData.daily[0]} />
+            </div>
 
             <AboutSection />
-
         </div>
     );
 }

@@ -1,47 +1,38 @@
 import style from './HourlyElement.module.scss'
-import { format } from 'date-fns';
 import useImage from 'services/helper/useImage';
 
 const HourlyElement = ({ hourlyData }) => {
     const { image: icon, loading, error } = useImage(hourlyData.weather[0].icon);
 
-    const temp = Math.round(hourlyData.temp);
-    const hour = format(new Date(hourlyData.dt * 1000), 'H:mm')
+    const temp = hourlyData.temp.toFixed(1);
+    const hour = new Date(hourlyData.dt * 1000).getHours();
     const forecast = hourlyData.weather[0].description;
-    const wind = Math.round(hourlyData.wind_speed * 3.6) || '0';
-    const rain = hourlyData.rain?.["1h"].toFixed(1) || '0';
+    const wind = Math.round(hourlyData.wind_speed * 3.6) || '-'; // multiply per 3.6 to convert from m/s to km/h
+    const windDirection = degToCompass(hourlyData.wind_deg || 0);
+    const rain = hourlyData.rain?.["1h"].toFixed(1) || '-';
+
+    // TODO: account for missing wind_deg field
+    const windDeg = degToCompass(hourlyData.wind_deg);
+
+    function degToCompass(num) {
+        var val = Math.floor((num / 22.5) + 0.5);
+        var arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+        return arr[(val % 16)];
+    }
 
     return (
-        <li className={style.hour}>
-            <p>{hour}</p>
+        <li className={style.hourlyElement}>
+            <p className={style.hour}>{hour}<span>:00</span></p>
 
-            <p>
-                <figure>
-                    <img src={icon} alt="weather conditions" />
-                </figure>
-            </p>
+            <img src={icon} alt="weather conditions" />
 
-            <p>{forecast}</p>
+            <p className={style.forecast}>{forecast}</p>
 
-            <p>{`${temp}°`}</p>
+            <p className={style.temp}>{`${temp}°`}</p>
 
-            <p>{wind} <span>km/h</span></p>
+            <p className={style.wind}>{wind}<br /><span>{windDirection}</span></p>
 
-            <p>{rain} <span>mm</span></p>
-
-
-            {/* <div class="hourTile">
-                            <div class="time">14:00</div>
-                            <div class="hourIcon">
-                                <img src="./images/10d.svg" />
-                            </div>
-                            <div class="hourForecast">moderate rain</div>
-                            <div class="hourTemp">13°</div>
-                            <div class="hourWind">33</div>
-                            <div class="windUnitLabel">km/h</div>
-                            <div class="hourRain">1.1</div>
-                            <div class="rainUnitLabel">mm</div>
-                        </div> */}
+            <p className={style.rain}>{rain}</p>
         </li>
     );
 }

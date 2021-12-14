@@ -22,29 +22,28 @@ const HourlySection = ({ hourlyWeatherData }) => {
 
     return (
         <div className={style.hourlySection}>
-            <div className={style.days}>
-                <h1
-                    onClick={() => setDay("today")}
-                    className={day === "today" && style.active}
-                >
-                    Today
-                </h1>
 
-                <h1
-                    onClick={() => setDay("tomorrow")}
-                    className={day === "tomorrow" && style.active}
-                >
-                    Tomorrow
-                </h1>
-            </div>
+            <div className={style.heading}>
+                <div className={style.days}>
+                    <h1
+                        onClick={() => setDay("today")}
+                        className={day === "today" && style.active}
+                    >
+                        Today
+                    </h1>
 
-            <div className={style.labels}>
-                <p>Time</p>
-                <p></p>
-                <p>Conditions</p>
-                <p>Temp</p>
-                <p>Wind</p>
-                <p>Rain</p>
+                    <h1
+                        onClick={() => setDay("tomorrow")}
+                        className={day === "tomorrow" && style.active}
+                    >
+                        Tomorrow
+                    </h1>
+                </div>
+
+                <div className={style.weatherLabels}>
+                    <p>Wind<br />km/h</p>
+                    <p>Rain <br />mm </p>
+                </div>
             </div>
 
             {loading.loading ? <LoadingSpinner /> :

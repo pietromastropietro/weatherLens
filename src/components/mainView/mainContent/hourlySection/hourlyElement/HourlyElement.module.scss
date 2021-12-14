@@ -1,44 +1,35 @@
 @use 'static/scss/constants';
 
-.hour {
-    // @include constants.neumo-inset;
-    // background-color: rgb(214, 53, 53);
-    background-color: rgb(255, 255, 255);
-    transition: 2s;
-    
+.hourlyElement {
     display: grid;
-    grid: 40px / 1fr 1.5fr 6fr 1fr 1fr 1fr;
+    grid: 35px / 60px 55px auto 50px 70px 70px;
     align-items: center;
-    
     border-radius: 15px;
-    padding: 10px;
+    padding: 10px 0 10px 15px;
+    margin-right: 10px; // margin to add space from element to scrollbar
     
-    font-weight: 600;
+    background-color: rgb(255, 255, 255);
     font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
     
-    // margin to add space from element to scrollbar
-    margin-right: 10px;
-    
-    // color: white !important;
-
-    p {
-        transition: 2s;
+    .hour, .temp {
+        font-size: 18px;
     }
     
-    
-    img {
-        transition: 2s;
-        width: 45px;
+    .wind, .rain {
+        text-align: center;
     }
-
+    
+    > img {
+        width: 35px;
+        height: 35px;
+    }
+    
     span {
         font-size: 12px;
         font-weight: inherit;
         color: #b6b6b6;
+        text-transform: uppercase;
     }
 }
-
-
-
-    
-

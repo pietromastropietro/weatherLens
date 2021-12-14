@@ -11,12 +11,18 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        transition: 0.4s;
+        transition: 0.2s;
 
         font-size: 14px;
+        font-weight: 600;
 
         &.active {
-            background-color: black;
+            background-color: black !important;
+            color: white;
+        }
+        
+        &:hover {
+            background-color: rgb(148, 148, 148);
             color: white;
         }
     }
