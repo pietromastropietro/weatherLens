@@ -945,8 +945,8 @@ const completeData = {
             "uvi": 0.26,
             "clouds": 45,
             "visibility": 10000,
-            // "wind_speed": 5.47,
-            // "wind_deg": 240,
+            "wind_speed": 5.47,
+            "wind_deg": 240,
             "wind_gust": 10.09,
             "weather": [
                 {

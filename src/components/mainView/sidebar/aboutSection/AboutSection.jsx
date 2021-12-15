@@ -22,7 +22,7 @@ const AboutSection = () => {
             {show &&
                 <div className={style.aboutOverlay}>
 
-                    <div className={style.about}>
+                    <div className={style.aboutDialog}>
 
                         <div className={style.icons}>
                             <a href="https://github.com/pietromastropietro" target="_blank">

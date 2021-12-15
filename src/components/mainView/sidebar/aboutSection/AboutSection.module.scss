@@ -25,7 +25,7 @@
     place-content: center;
 }
 
-.about {
+.aboutDialog {
     background-color: white;
     width: 340px;
     height: 250px;
@@ -51,7 +51,6 @@
         
         border-bottom: 1.5px solid transparent; // to account for hover border
 
-        
         &:hover {
             border-bottom: 1.5px solid black;
 

@@ -1,13 +1,8 @@
 import { useState } from 'react';
 import style from './HourlySection.module.scss'
 import HourlyElement from './hourlyElement/HourlyElement';
-import { LoadingContext } from 'App';
-import { useContext } from 'react';
-import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
 
 const HourlySection = ({ hourlyWeatherData }) => {
-    const loading = useContext(LoadingContext);
-
     // Calculate how many hours remain until midnight (first element of hourlyWeatherData refers to the hour in which the request has been made)
     const hoursLeftUntilMidnight = 24 - (new Date(hourlyWeatherData[0].dt * 1000).getHours());
 
@@ -46,16 +41,14 @@ const HourlySection = ({ hourlyWeatherData }) => {
                 </div>
             </div>
 
-            {loading.loading ? <LoadingSpinner /> :
-                <ul>
-                    {weatherData[day].map(hourlyData =>
-                        <HourlyElement
-                            key={hourlyData.dt}
-                            hourlyData={hourlyData}
-                        />
-                    )}
-                </ul>
-            }
+            <ul>
+                {weatherData[day].map(hourlyData =>
+                    <HourlyElement
+                        key={hourlyData.dt}
+                        hourlyData={hourlyData}
+                    />
+                )}
+            </ul>
         </div>
     );
 }

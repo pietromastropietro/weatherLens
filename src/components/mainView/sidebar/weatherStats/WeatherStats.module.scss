@@ -6,13 +6,17 @@
 
     font-weight: 600;
     font-size: 15px;
+    
+    > p {
+        text-transform: capitalize;
+    }
 
     div {
         display: flex;
         justify-content: space-between;
         width: 170px;
         // background-color: rgb(173, 173, 101);
-
+        
         p {
             font-weight: 600;
             font-size: 15px;

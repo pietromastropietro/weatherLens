@@ -1,9 +1,12 @@
 import style from './Searchbar.module.scss';
 import icon from 'static/images/search.svg'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from 'axios';
+import { LoadingContext } from 'App';
 
-const Searchbar = ({ setLocation }) => {
+const Searchbar = () => {
+    const { setLocation } = useContext(LoadingContext);
+
     const [city, setCity] = useState("");
     const [citiesResults, setCitiesResults] = useState([]);
 

@@ -4,19 +4,19 @@ import Sidebar from './components/mainView/sidebar/Sidebar';
 import { completeData, defaultCity, defaultData } from './default.js'
 import style from './App.module.scss'
 import axios from 'axios';
+import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
 
 export const LoadingContext = createContext();
 
 const App = () => {
-	
 	const [unit, setUnit] = useState('metric');
 	const [loading, setLoading] = useState(false);
-
-	const contextValues = { loading, unit, setUnit}
-
-	const [weatherData, setWeatherData] = useState(completeData);
-
+	const [error, setError] = useState(false);
+	
+	const [weatherData, setWeatherData] = useState(completeData);	
 	const [location, setLocation] = useState(defaultCity);
+
+	const contextValues = { loading, unit, setUnit, location, setLocation }
 
 	useEffect(() => {
 		console.log("effect");
@@ -47,13 +47,36 @@ const App = () => {
 
 	return (
 		<main>
-			<LoadingContext.Provider value={contextValues}>
+			{error &&
+				<div className={style.errorOverlay}>
+					<div className={style.errorDialog}>
 
-				<Sidebar weatherData={weatherData} setLocation={setLocation} />
-				{/* <div className={style.separator}></div> */}
-				<MainContent weatherData={weatherData} setUnit={setUnit} />
+						<div className={style.icon}>!</div>
 
-			</LoadingContext.Provider>
+						<h2>Something went wrong</h2>
+
+						<p>
+							Weather data not available,
+							if the problem persists please report it
+							<a href=""> here</a>.<br /><br />
+							You can try the app, but the data aren't updated.
+						</p>
+
+						<button onClick={() => setError(false)}>Try the app</button>
+					</div>
+				</div>
+			}
+
+			{loading ?
+				<div className={style.loading}>
+					<LoadingSpinner />
+				</div>
+				:
+				<LoadingContext.Provider value={contextValues}>
+					<Sidebar weatherData={weatherData} />
+					<MainContent weatherData={weatherData} />
+				</LoadingContext.Provider>
+			}
 		</main>
 	);
 }
