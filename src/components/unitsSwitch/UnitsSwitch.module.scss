@@ -27,7 +27,13 @@
         }
     }
 }
-
+@media screen and (max-width: 920px) {
+    .switch {
+        div {
+            background-color: rgb(209, 209, 209);
+        }
+    }
+}
 // .switch {
 //     display: flex;
 //     align-items: center;

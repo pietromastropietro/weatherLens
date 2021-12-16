@@ -1,47 +1,129 @@
 @use 'static/scss/constants';
 
-.currentWeather {
-    // align-self: center;
-    // width: 160px;
-    padding-bottom: 40px;
-    // margin-top: 60px;
 
-    border-bottom: 1px solid #b6b6b648;
 
-    h1 {
-        font-size: 30px;
-        font-weight: 500;
+@media screen and (min-width: 920px) {
+    .currentWeather {
+        // align-self: center;
+        // width: 160px;
+        // margin-top: 60px;
+    
+    
+        h1 {
+            font-size: 30px;
+            font-weight: 500;
+        }
+    
+        p {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+    
+        span {
+            font-weight: inherit;
+            color: #b6b6b6;
+        }
+        
+        img {
+            margin: 10px 0;
+            width: 190px;
+            height: 190px;
+        }
+    }
+    .temp {
+        display: flex;
+    
+        > h2 {
+            font-size: 70px;
+            font-weight: 400;
+        }
+    
+        > p {
+            margin-top: 7px;
+            font-size: 40px;
+        }
+    }
+    .UnitsSwitchContainer {
+        display: none;
     }
 
-    p {
-        font-size: 18px;
-        font-weight: 600;
-        text-transform: capitalize;
+}
+@media screen and (max-width: 920px) {
+    .currentWeather {
+    
+        h1 {
+            font-size: 28px;
+            font-weight: 500;
+        }
+    
+        p {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+    
+        span {
+            font-weight: inherit;
+            color: #b6b6b6;
+        }
+        
+        img {
+            margin: 10px 0;
+            width: 150px;
+            height: 150px;
+        }
+    }
+    .temp {
+        display: flex;
+    
+        > h2 {
+            font-size: 65px;
+            font-weight: 400;
+        }
+    
+        > p {
+            margin-top: 7px;
+            font-size: 36px;
+        }
     }
 
-    span {
-        font-weight: inherit;
-        color: #b6b6b6;
+    .header {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-auto-flow: column;
+
+        div {
+            justify-self: flex-end;
+
+            p {
+                font-size: 14px;
+            }   
+        }
+    }
+
+    .weather {
+        display: grid;
+        grid-template-columns:auto auto;
+        grid-template-rows: 1fr 0.5fr;
+        column-gap: 30px;
+
+        div {
+            align-self: flex-end;                    
+        }
+
+        img {
+            justify-self: flex-end;
+            grid-area: 1 / 1 / 3 / 2;
+        }
+        
+        > p {
+            width: 80px;
+        }
     }
     
-    img {
-        margin: 10px 0;
-        width: 190px;
-        height: 190px;
-    }
-}
-.temp {
-    display: flex;
-
-    h2 {
-        font-size: 70px;
-        font-weight: 400;
-    }
-
-    p {
-        margin-top: 7px;
-        font-size: 40px;
-    }
+    
 }
 
 

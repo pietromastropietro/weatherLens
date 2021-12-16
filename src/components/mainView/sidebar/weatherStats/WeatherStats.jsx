@@ -1,4 +1,3 @@
-import Stat from "./Stat/Stat";
 import style from './WeatherStats.module.scss';
 
 const Weatherstats = ({ dayWeatherData }) => {
@@ -15,15 +14,8 @@ const Weatherstats = ({ dayWeatherData }) => {
     return (
 
         <div className={style.weatherStats}>
-            {/* <Stat label="H / L" unit="Cel" data={temp} />
-                <Stat label="Wind" unit="m/s" data={wind} />
-                <Stat label="Rain" unit="mm" data={rain} /> */}
 
-            {/* <p>Max/Min - 8° <span>4°</span></p>
-                <p>{`Rain - ${rain}`} <span>mm</span> </p>
-            <p>{`Wind - ${wind}`} <span>km/h</span></p> */}
-
-            <p>{forecast}</p>
+            {/* <p>{forecast}</p> */}
 
             <div>
                 {/* <img src="" alt="" /> */}

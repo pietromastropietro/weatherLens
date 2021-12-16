@@ -3,9 +3,10 @@ import useImage from 'services/helper/useImage';
 import style from './CurrentWeather.module.scss';
 import { LoadingContext } from 'App';
 import { useContext } from 'react';
+import UnitsSwitch from 'components/unitsSwitch/UnitsSwitch';
 
 const CurrentWeather = ({ currentWeatherData }) => {
-    const { location } = useContext(LoadingContext);
+    const { unit, location } = useContext(LoadingContext);
     const { image: icon, loading, error } = useImage(currentWeatherData.weather[0].icon);
 
     let date = {
@@ -20,19 +21,30 @@ const CurrentWeather = ({ currentWeatherData }) => {
 
     return (
         <div className={style.currentWeather}>
-            <h1>{location.name}, <span>{location.country}</span></h1>
 
-            {/* <p>{day}, <span>{time}</span></p> */}
-            <p>{date.day}, <span>{date.time}</span></p>
+            <div className={style.header}>
+                <h1>{location.name}, <span>{location.country}</span></h1>
+                <p>{date.day}, <span>{date.time}</span></p>
 
-            <img src={icon} alt="weather conditions" />
-
-            <div className={style.temp}>
-                <h2>{temp}</h2>
-                <p>°C</p>
+                <div className={style.UnitsSwitchContainer}>
+                    <UnitsSwitch />
+                </div>
             </div>
 
-            <p>{forecast}</p>
+            {/* <h1>{location.name}, <span>{location.country}</span></h1>
+            <p>{date.day}, <span>{date.time}</span></p> */}
+
+            <div className={style.weather}>
+                <img src={icon} alt="weather conditions" />
+
+                <div className={style.temp}>
+                    <h2>{temp}</h2>
+                    <p>°{unit === "metric" ? "C" : "F"}</p>
+                </div>
+
+                <p>{forecast}</p>
+            </div>
+
         </div>
     );
 };

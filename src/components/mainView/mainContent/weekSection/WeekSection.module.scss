@@ -1,15 +1,45 @@
-.weekSection {
-    h1 {
-        width: fit-content;
-        font-size: 22px;
-        font-weight: 600;
-        margin: 0 0 20px 3px;
-        padding-bottom: 2px;
-        border-bottom: 1.5px solid black;
+
+@media screen and (min-width: 920px) {
+    .weekSection {
+        h1 {
+            width: fit-content;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0 0 20px 3px;
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid black;
+        }
+    }
+    .daysContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 }
-.daysContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+
+@media screen and (max-width: 920px) {
+    .weekSection {
+
+        h1 {
+            width: fit-content;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 10px 3px;
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid black;
+        }
+    }
+    .daysContainer {
+        // display: grid;
+        // grid-auto-flow: column;
+        display: flex;
+        // width: 600px;
+        // width: auto;
+        // flex-wrap: wrap;
+        gap: 10px;
+        // width: 810px;
+        overflow: auto;
+        height: 120px;
+        // padding-bottom: 10px;
+    }
 }

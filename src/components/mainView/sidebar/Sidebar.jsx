@@ -8,14 +8,22 @@ const Sidebar = ({ weatherData }) => {
     return (
         <div className={style.sidebar}>
             <Searchbar />
-
+            
             <div>
                 <CurrentWeather currentWeatherData={weatherData.current} />
 
+
+                <div className={style.hideOnMobile}>
+                <div className={style.separator}></div>
+
+
                 <Weatherstats dayWeatherData={weatherData.daily[0]} />
+                </div>
             </div>
 
-            <AboutSection />
+            <div className={style.hideOnMobile}>
+                <AboutSection />
+            </div>
         </div>
     );
 }

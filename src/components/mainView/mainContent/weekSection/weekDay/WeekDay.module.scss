@@ -7,24 +7,36 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 80px;
-    height: 100px;
-    padding: 10px 10px;
+    
+    min-width: 5em;
+    height: 6.6em;
+    // min-width: 80px;
+    // height: 100px;
+
+    padding: 0.65em;
+    // padding: 10px 10px;
     border-radius: 15px;
 
+    font-size: 15px;
     p {
         font-weight: 600;
-        font-size: 15px;
 
 
         span {
-                color: #b6b6b6;
-            }
+            color: #b6b6b6;
+        }
     }
 
     img {
-        width: 35px;
-        height: 35px;
+        width: 2.4em;
+        height: 2.4em;
+        // width: 35px;
+        // height: 35px;
     }
     
+}
+@media screen and (max-width: 920px) {
+    .day {
+        font-size: 13px;
+    }
 }

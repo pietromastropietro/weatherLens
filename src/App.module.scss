@@ -1,17 +1,28 @@
 @use 'static/scss/constants';
 
-main { 
-    // @include constants.main-neumo;
-    // @include constants.neumo;
-    background-color: white;
+@media screen and (min-width: 920px) {
+   main { 
+        background-color: white;
 
-    display: flex;
-    width: 1108px;
-    min-height: 700px;
-    border-radius: 50px;
-    box-shadow: 0px 50px 47px -20px rgba(0, 0, 0, 0.349);
+        display: flex;
+        width: 1222px;
+        min-height: 700px;
+        border-radius: 50px;
+        box-shadow: 0px 50px 47px -20px rgba(0, 0, 0, 0.349);   
+    } 
 }
-    
+
+@media screen and (max-width: 920px) {
+    main {
+        background-color: white;
+
+        // display: flex;
+        // width: 1222px;
+        // min-height: 700px;
+    }
+}
+
+
 .loading {
     // background-color: rgba(128, 128, 128, 0.473);
     width: 100%;
@@ -21,8 +32,6 @@ main {
     display: grid;
     place-content: center;
 }
-
-
 .errorOverlay {
     background-color: rgba(128, 128, 128, 0.473);
     position: fixed;
@@ -35,7 +44,6 @@ main {
     display: grid;
     place-content: center;
 }
-
 .errorDialog {
     background-color: white;
     border-radius: 15px;
