@@ -1,23 +1,23 @@
 import { format } from 'date-fns';
 import useImage from 'services/helper/useImage';
 import style from './CurrentWeather.module.scss';
-import { LoadingContext } from 'App';
+import { Context } from 'App';
 import { useContext } from 'react';
 import UnitsSwitch from 'components/unitsSwitch/UnitsSwitch';
 
-const CurrentWeather = ({ currentWeatherData }) => {
-    const { unit, location } = useContext(LoadingContext);
-    const { image: icon, loading, error } = useImage(currentWeatherData.weather[0].icon);
+const CurrentWeather = () => {
+    const { unit, location, weatherData } = useContext(Context);
+    const { image: icon, loading, error } = useImage(weatherData.current.weather[0].icon);
 
     let date = {
-        day: format(new Date(currentWeatherData.dt * 1000), 'EEEE'),
-        time: format(new Date(currentWeatherData.dt * 1000), 'H:mm')
+        day: format(new Date(weatherData.current.dt * 1000), 'EEEE'),
+        time: format(new Date(weatherData.current.dt * 1000), 'H:mm')
     };
 
-    // const day = format(new Date(currentWeatherData.dt * 1000), 'EEEE');
-    // const time = format(new Date(currentWeatherData.dt * 1000), 'H:mm');
-    const temp = Math.round(currentWeatherData.temp);
-    const forecast = currentWeatherData.weather[0].description;
+    // const day = format(new Date(weatherData.current.dt * 1000), 'EEEE');
+    // const time = format(new Date(weatherData.current.dt * 1000), 'H:mm');
+    const temp = Math.round(weatherData.current.temp);
+    const forecast = weatherData.current.weather[0].description;
 
     return (
         <div className={style.currentWeather}>

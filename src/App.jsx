@@ -1,25 +1,25 @@
 import { createContext, useEffect, useState } from 'react';
 import MainContent from './components/mainView/mainContent/MainContent'
 import Sidebar from './components/mainView/sidebar/Sidebar';
-import { completeData, defaultCity, defaultData } from './default.js'
+import { defaultData, defaultCity } from './default.js'
 import style from './App.module.scss'
 import axios from 'axios';
 import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
+import ErrorDialog from 'components/ErrorDialog/ErrorDialog';
 
-export const LoadingContext = createContext();
+export const Context = createContext();
 
 const App = () => {
 	const [unit, setUnit] = useState('metric');
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 	
-	const [weatherData, setWeatherData] = useState(completeData);	
+	const [weatherData, setWeatherData] = useState(defaultData);	
 	const [location, setLocation] = useState(defaultCity);
 
-	const contextValues = { loading, unit, setUnit, location, setLocation }
+	const contextValues = { weatherData, loading, unit, setUnit, location, setLocation }
 
 	useEffect(() => {
-		console.log("effect");
 		// Gets weather data for the city (by lat & lon) from the openweatherAPI and returns the JSON
 
 		const fetchData = async (lat, lon) => {
@@ -43,39 +43,21 @@ const App = () => {
 		};
 
 		// fetchData(location.lat, location.lon);
-	}, [])
+	}, [unit, location]) // so when unit or location changes it fecthes the data automatically, no need to do anything
 
 	return (
 		<main>
-			{error &&
-				<div className={style.errorOverlay}>
-					<div className={style.errorDialog}>
-
-						<div className={style.icon}>!</div>
-
-						<h2>Something went wrong</h2>
-
-						<p>
-							Weather data not available,
-							if the problem persists please report it
-							<a href=""> here</a>.<br /><br />
-							You can try the app, but the data aren't updated.
-						</p>
-
-						<button onClick={() => setError(false)}>Try the app</button>
-					</div>
-				</div>
-			}
+			{error && <ErrorDialog setError={setError} />}
 
 			{loading ?
-				<div className={style.loading}>
+				<div className={style.loadingSpinnerContainer}>
 					<LoadingSpinner />
 				</div>
 				:
-				<LoadingContext.Provider value={contextValues}>
-					<Sidebar weatherData={weatherData} />
-					<MainContent weatherData={weatherData} />
-				</LoadingContext.Provider>
+				<Context.Provider value={contextValues}>
+					<Sidebar />
+					<MainContent />
+				</Context.Provider>
 			}
 		</main>
 	);

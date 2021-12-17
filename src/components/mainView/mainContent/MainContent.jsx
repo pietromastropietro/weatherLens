@@ -1,10 +1,10 @@
 import style from './MainContent.module.scss'
-import TodaySection from './hourlySection/HourlySection';
+import HourlySection from './hourlySection/HourlySection';
 import WeekSection from './weekSection/WeekSection';
 import UnitsSwitch from 'components/unitsSwitch/UnitsSwitch';
 import AboutSection from '../sidebar/aboutSection/AboutSection';
 
-const MainContent = ({ weatherData }) => {
+const MainContent = () => {
     return (
         <>
             <div className={style.mainContent}>
@@ -15,13 +15,12 @@ const MainContent = ({ weatherData }) => {
                     {/* placeholder for dark theme changer */}
                 </div>
 
-                <WeekSection dailyWeatherData={weatherData.daily} />
+                <WeekSection />
+                <HourlySection />
 
-                <TodaySection hourlyWeatherData={weatherData.hourly} />
-
-            <div className={style.hideOnDesktop}>
-                <AboutSection />
-            </div>
+                <div className={style.hideOnDesktop}>
+                    <AboutSection />
+                </div>
             </div>
         </>
     );

@@ -1,23 +1,22 @@
-import { useState } from 'react/cjs/react.development'
 import style from './UnitsSwitch.module.scss'
-import { LoadingContext } from 'App';
+import { Context } from 'App';
 import { useContext } from 'react';
 
 const UnitsSwitch = () => {
-    const { unit, setUnit } = useContext(LoadingContext);
+    const { unit, setUnit } = useContext(Context);
 
     return (
         <div className={style.switch}>
             <div
                 onClick={() => setUnit("metric")}
-                className={unit === "metric" && style.active}
+                className={unit === "metric" ? style.active : undefined}
             >
                 <p>°C</p>
             </div>
 
             <div
                 onClick={() => setUnit("imperial")}
-                className={unit === "imperial" && style.active}
+                className={unit === "imperial" ? style.active : undefined}
             >
                 <p>°F</p>
             </div>

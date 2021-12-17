@@ -4,20 +4,18 @@ import CurrentWeather from './currentWeather/CurrentWeather';
 import Weatherstats from './weatherStats/WeatherStats';
 import AboutSection from './aboutSection/AboutSection';
 
-const Sidebar = ({ weatherData }) => {
+const Sidebar = () => {
     return (
         <div className={style.sidebar}>
             <Searchbar />
-            
-            <div>
-                <CurrentWeather currentWeatherData={weatherData.current} />
 
+            <div>
+                <CurrentWeather />
 
                 <div className={style.hideOnMobile}>
-                <div className={style.separator}></div>
+                    <div className={style.separator}></div>
 
-
-                <Weatherstats dayWeatherData={weatherData.daily[0]} />
+                    <Weatherstats />
                 </div>
             </div>
 

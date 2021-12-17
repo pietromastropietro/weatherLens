@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import style from './AboutSection.module.scss'
 import githubLogo from 'static/images/github.png'
 import linkedin from 'static/images/linkedin.svg'
@@ -7,11 +7,6 @@ const AboutSection = () => {
     const [show, setshow] = useState(false);
 
     const toggle = () => {
-        // if (show) {
-        //     setshow(false)
-        // } else {
-        //     setshow(true)
-        // }
         setshow(!show)
     }
 
@@ -25,10 +20,10 @@ const AboutSection = () => {
                     <div className={style.aboutDialog}>
 
                         <div className={style.icons}>
-                            <a href="https://github.com/pietromastropietro" target="_blank">
+                            <a href="https://github.com/pietromastropietro" target="_blank" rel="noreferrer">
                                 <img src={githubLogo} alt="github-logo" />
                             </a>
-                            <a href="https://github.com/pietromastropietro" target="_blank">
+                            <a href="https://github.com/pietromastropietro" target="_blank" rel="noreferrer">
                                 <img src={linkedin} alt="linkedin-logo" />
                             </a>
                         </div>
@@ -41,9 +36,9 @@ const AboutSection = () => {
                         <div>
                             <p>
                                 Weather icons by
-                                <a href="https://www.flaticon.com/authors/freepik" target="_blank"> Freepik</a>,
+                                <a href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noreferrer"> Freepik</a>,
                                 from
-                                <a href="https://www.flaticon.com/" target="_blank"> Flaticon.</a>
+                                <a href="https://www.flaticon.com/" target="_blank" rel="noreferrer"> Flaticon.</a>
                             </p>
                             <p>Copyright &copy; 2021.</p>
                         </div>

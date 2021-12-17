@@ -1,20 +1,28 @@
 @use 'static/scss/constants';
 
 .searchContainer {
-    border-radius: 20px;
     background-color: #f6f6f8;
-    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+
+    &.expand {
+        border-radius: 20px 20px 0 0;
+    }
 }
 .searchbar {
     display: flex;
+    align-items: center;
     column-gap: 10px;
     padding: 10px 20px;
 
     input {
         border: none;
         outline: none;
-        font-size: 14px;
         background-color: transparent;
+        font: inherit;
+        overflow: hidden;
     }
 
     img {
@@ -23,17 +31,43 @@
     }
 }
 .results {
+    background-color: #f6f6f8;
+    position: absolute;
+    width: calc(100% - 23px); // to account for padding (43px)
     height: 0;
-    font-size: 14px;
-    
+    row-gap: 10px;
+    border-radius: 0 0 20px 20px;
+    font-size: 15px;
+    font-weight: 600;
+
     &.expand {
-        padding: 0 20px 10px 45px;
+        padding: 5px 0px 10px 23px;
         height: fit-content;
         animation: expand 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     }
     
     li {
+        display: flex;
+        align-items: center;
         cursor: pointer;
+
+        img {
+            margin-right: 12px;
+            width: 10px;
+            height: 10px;
+        }
+
+        p:last-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-left: 3px; // act as space between words, couldn't do it in the html
+            color: #b6b6b6;
+        }
+        
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
