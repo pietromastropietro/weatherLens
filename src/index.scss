@@ -1,5 +1,22 @@
 @use 'static/scss/constants';
 
+/* THEMES */
+[data-theme='light'] {
+    --page-bg: #d6d7da;
+    --primary-color: #ffffff;
+    --secondary-color: #f6f6f8;
+    --primary-text-color: #000000;
+    --secondary-text-color: #b6b6b6;
+}
+
+[data-theme='dark'] {
+    --page-bg: #3b3b3b;
+    --primary-color: rgba(44, 44, 44, 0.842);
+    --secondary-color: #1b1b1b;
+    --primary-text-color: rgb(255, 255, 255);
+    --secondary-text-color: #e6e6e6;
+}
+
 /* STYLE RESETS */
 html, body, p, h1, h2, h3, h4, h5, h6, button, figure, legend, span, input, fieldset, ul, li, dl, dt, dd {
     margin: 0;
@@ -47,23 +64,24 @@ a:hover {
     color: rgb(0, 110, 255);
 }
 
-
 body {
-    background-color: #d6d7da;
+    // background-color: #d6d7da;
+    // background-color: var(--body-bg);
+
     font-family: 'Montserrat', sans-serif;
+    // transition: all 1s linear;
 }  
 #root {
     // display: flex;
     // justify-content: center;
-
 }
 /* Media query for large screens */
 @media screen and (min-width: 940px) {
     
     #root {
-        display: flex;
-        justify-content: center;
-        padding: 50px 40px;
+        // display: flex;
+        // justify-content: center;
+        // padding: 50px 40px;
     }
 }
 

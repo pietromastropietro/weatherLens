@@ -12,14 +12,12 @@ const Sidebar = () => {
             <div>
                 <CurrentWeather />
 
-                <div className={style.hideOnMobile}>
-                    <div className={style.separator}></div>
+                <div className={style.separator}></div>
 
-                    <Weatherstats />
-                </div>
+                <Weatherstats />
             </div>
 
-            <div className={style.hideOnMobile}>
+            <div className={style.aboutBtnContainer}>
                 <AboutSection />
             </div>
         </div>

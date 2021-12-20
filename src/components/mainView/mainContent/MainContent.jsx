@@ -3,26 +3,30 @@ import HourlySection from './hourlySection/HourlySection';
 import WeekSection from './weekSection/WeekSection';
 import UnitsSwitch from 'components/unitsSwitch/UnitsSwitch';
 import AboutSection from '../sidebar/aboutSection/AboutSection';
+import ThemeSwitch from 'components/themeSwitch/ThemeSwitch';
 
 const MainContent = () => {
     return (
-        <>
-            <div className={style.mainContent}>
+        <div className={style.mainContent}>
 
+            <div>
                 <div className={style.header}>
                     <UnitsSwitch />
 
-                    {/* placeholder for dark theme changer */}
+                    <ThemeSwitch />
+
                 </div>
 
                 <WeekSection />
-                <HourlySection />
-
-                <div className={style.hideOnDesktop}>
-                    <AboutSection />
-                </div>
             </div>
-        </>
+
+            <HourlySection />
+
+            <div className={style.aboutBtnContainer}>
+                <AboutSection />
+            </div>
+        </div>
+
     );
 }
 

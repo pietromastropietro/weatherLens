@@ -1,89 +1,90 @@
 @use 'static/scss/constants';
 
+.currentWeather {
+    h1 {
+        font-weight: 500;
+    }
+
+    p {
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    span {
+        font-weight: inherit;
+        color: var(--secondary-text-color);
+    }
+    
+    img {
+        margin: 10px 0;
+    }
+}
+.temp {
+    display: flex;
+
+    > h2 {
+        font-weight: 400;
+    }
+
+    > p {
+        margin-top: 7px;
+    }
+}
 
 
 @media screen and (min-width: 920px) {
     .currentWeather {
-        // align-self: center;
-        // width: 160px;
-        // margin-top: 60px;
-    
-    
         h1 {
             font-size: 30px;
-            font-weight: 500;
         }
     
         p {
             font-size: 18px;
-            font-weight: 600;
-            text-transform: capitalize;
         }
     
-        span {
-            font-weight: inherit;
-            color: #b6b6b6;
-        }
-        
         img {
-            margin: 10px 0;
             width: 190px;
             height: 190px;
         }
     }
+
     .temp {
-        display: flex;
-    
         > h2 {
             font-size: 70px;
-            font-weight: 400;
         }
     
         > p {
-            margin-top: 7px;
             font-size: 40px;
         }
     }
+
     .UnitsSwitchContainer {
         display: none;
     }
-
 }
+
 @media screen and (max-width: 920px) {
     .currentWeather {
-    
         h1 {
             font-size: 28px;
-            font-weight: 500;
         }
     
         p {
             font-size: 16px;
-            font-weight: 600;
-            text-transform: capitalize;
         }
     
-        span {
-            font-weight: inherit;
-            color: #b6b6b6;
-        }
-        
         img {
-            margin: 10px 0;
             width: 150px;
             height: 150px;
         }
     }
+
     .temp {
-        display: flex;
-    
         > h2 {
             font-size: 65px;
-            font-weight: 400;
         }
     
         > p {
-            margin-top: 7px;
             font-size: 36px;
         }
     }
@@ -122,8 +123,6 @@
             width: 80px;
         }
     }
-    
-    
 }
 
 

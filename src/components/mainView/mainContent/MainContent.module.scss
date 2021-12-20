@@ -1,43 +1,44 @@
 @use 'static/scss/constants';
+.mainContent {
+    background-color: var(--secondary-color);
+    // width: 700px;
+    // width: 66%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.aboutBtnContainer {
+    display: grid;
+    place-content: center;
+    margin-top: 20px;
+}
 
 @media screen and (min-width: 920px) {
     .mainContent {
-        background-color: #f6f6f8;
-        // width: 700px;
-        // width: 66%;
         width: calc(70% - 80px);
         padding: 50px;
         border-radius:0 50px 50px 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
     }
-    .header {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-    }
-    .hideOnDesktop {
+
+    .aboutBtnContainer {
         display: none;
     }
 }
 
 @media screen and (max-width: 920px) {
     .mainContent {
-        background-color: #f6f6f8;
-    
         padding: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
     }
+
     .header {
         display: none;
     }
-    .hideOnDesktop {
-        display: grid;
-        place-content: center;
-        margin-top: 20px;
-    }
 }
-

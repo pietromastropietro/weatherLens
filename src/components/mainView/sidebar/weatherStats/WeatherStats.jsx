@@ -20,21 +20,30 @@ const Weatherstats = () => {
 
             {/* <p>{forecast}</p> */}
 
-            <div>
-                {/* <img src="" alt="" /> */}
-                <p>High / Low</p>
+            <div className={style.stat}>
+                <div>
+                    {/* <img src="" alt="" /> */}
+                    <p>High / Low</p>
+                </div>
+
                 <p>{temps.max}° <span className={style.minTemp}>{temps.min}°</span></p>
             </div>
 
             <div>
-                {/* <img src="" alt="" /> */}
-                <p>Wind <span>km/h</span></p>
+                <div>
+                    {/* <img src="" alt="" /> */}
+                    <p>Wind <span>km/h</span></p>
+                </div>
+
                 <p>{wind}</p>
             </div>
-            
+
             <div>
-                {/* <img src="" alt="" /> */}
-                <p>Rain <span>mm</span></p>
+                <div>
+                    {/* <img src="" alt="" /> */}
+                    <p>Rain <span>mm</span></p>
+                </div>
+                
                 <p>{rain}</p>
             </div>
         </div>

@@ -13,11 +13,13 @@ const App = () => {
 	const [unit, setUnit] = useState('metric');
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
-	
-	const [weatherData, setWeatherData] = useState(defaultData);	
+
+	const [weatherData, setWeatherData] = useState(defaultData);
 	const [location, setLocation] = useState(defaultCity);
 
-	const contextValues = { weatherData, loading, unit, setUnit, location, setLocation }
+	const [theme, setTheme] = useState("light");
+
+	const contextValues = { weatherData, loading, unit, setUnit, location, setLocation, theme, setTheme }
 
 	useEffect(() => {
 		// Gets weather data for the city (by lat & lon) from the openweatherAPI and returns the JSON
@@ -46,20 +48,23 @@ const App = () => {
 	}, [unit, location]) // so when unit or location changes it fecthes the data automatically, no need to do anything
 
 	return (
-		<main>
-			{error && <ErrorDialog setError={setError} />}
+		<div className={style.test} data-theme={theme}>
 
-			{loading ?
-				<div className={style.loadingSpinnerContainer}>
-					<LoadingSpinner />
-				</div>
-				:
-				<Context.Provider value={contextValues}>
-					<Sidebar />
-					<MainContent />
-				</Context.Provider>
-			}
-		</main>
+			<main >
+				{error && <ErrorDialog setError={setError} />}
+
+				{loading ?
+					<div className={style.loadingSpinnerContainer}>
+						<LoadingSpinner />
+					</div>
+					:
+					<Context.Provider value={contextValues}>
+						<Sidebar />
+						<MainContent />
+					</Context.Provider>
+				}
+			</main>
+		</div>
 	);
 }
 
