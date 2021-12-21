@@ -10,11 +10,23 @@
 }
 
 [data-theme='dark'] {
-    --page-bg: #3b3b3b;
-    --primary-color: rgba(44, 44, 44, 0.842);
-    --secondary-color: #1b1b1b;
-    --primary-text-color: rgb(255, 255, 255);
-    --secondary-text-color: #e6e6e6;
+    // v1
+    // --page-bg: #121212;
+    // --primary-color: #272727;
+    // --secondary-color: #1b1b1b;
+    // --primary-text-color: #ffffff;
+    // --secondary-text-color: #e6e6e6;
+
+    // v2
+    --page-bg: #363636;
+    --primary-color: #282828;
+    --secondary-color: #222222;
+    --primary-text-color: #f1f1f1;
+    --secondary-text-color: #6e6d6d; //5e5d5d  //a09fa0
+    
+    img {
+        opacity: 0.9;
+    }
 }
 
 /* STYLE RESETS */

@@ -3,11 +3,18 @@ import style from './Sidebar.module.scss';
 import CurrentWeather from './currentWeather/CurrentWeather';
 import Weatherstats from './weatherStats/WeatherStats';
 import AboutSection from './aboutSection/AboutSection';
+import ThemeSwitch from 'components/themeSwitch/ThemeSwitch';
 
 const Sidebar = () => {
     return (
         <div className={style.sidebar}>
-            <Searchbar />
+            <div className={style.searchbarAndThemeSwitchContainer}>
+                <Searchbar />
+                
+                <div className={style.themeSwitchContainer}>
+                    <ThemeSwitch />
+                </div>
+            </div>
 
             <div>
                 <CurrentWeather />

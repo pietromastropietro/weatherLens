@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: space-between;
     row-gap: 40px;
+    transition: 0.5s;
 }
 .separator {
     width: 100%;
@@ -20,11 +21,21 @@
         padding: 50px 50px;
         border-radius: 50px 0 0 50px;
     }
+
+    .themeSwitchContainer {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 920px) {
     .sidebar {
         padding: 20px;
+    }
+
+    .searchbarAndThemeSwitchContainer {
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
     }
 
     .separator, .aboutBtnContainer {

@@ -7,6 +7,7 @@
     font-size: 16px;
     font-weight: 600;
     border-radius: 15px;
+    transition: background 0.5s;
 }
 
 .aboutOverlay {
@@ -23,7 +24,7 @@
 }
 
 .aboutDialog {
-    background-color: white;
+    background-color: var(--primary-color);
     width: 22em;
     height: 16em;
     padding: 1.3em;
@@ -33,7 +34,6 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
-
     font-size: 15px;
 
     h1 {
@@ -48,7 +48,7 @@
 
     p {
         font-size: 0.8em;
-        color: #b6b6b6;
+        color: var(--secondary-text-color);
     }
     
     button {
@@ -58,11 +58,11 @@
         cursor: pointer;
         padding-bottom: 2px;
         transition: 0.2s;
-        
+        color: var(--primary-text-color);
         border-bottom: 1.5px solid transparent; // to account for hover border
 
         &:hover {
-            border-bottom: 1.5px solid black;
+            border-bottom: 1.5px solid var(--primary-text-color);
 
         }
     }
@@ -72,17 +72,17 @@
     column-gap: 0.6em;
 
     a {
-        // background-color: #b6b6b6;
-        width: 3.3em;
-        height: 3.3em;
-        border: 1.5px solid #b6b6b6;
-        border-radius: 50%;
-        transition: 0.2s;
+        background-color: #ffffff;
         display: grid;
         place-content: center;
+        width: 3.3em;
+        height: 3.3em;
+        border: 1.5px solid var(--secondary-text-color);
+        border-radius: 50%;
+        transition: 0.2s;
 
         &:hover {
-            background-color: #b6b6b6;
+            background-color: var(--secondary-text-color);
         }
 
         img {

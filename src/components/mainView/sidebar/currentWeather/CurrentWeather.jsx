@@ -31,9 +31,6 @@ const CurrentWeather = () => {
                 </div>
             </div>
 
-            {/* <h1>{location.name}, <span>{location.country}</span></h1>
-            <p>{date.day}, <span>{date.time}</span></p> */}
-
             <div className={style.weather}>
                 <img src={icon} alt="weather conditions" />
 

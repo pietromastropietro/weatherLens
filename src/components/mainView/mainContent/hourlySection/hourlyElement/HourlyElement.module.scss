@@ -1,28 +1,40 @@
 @use 'static/scss/constants';
 
+.hourlyElement {
+    display: grid;
+    align-items: center;
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: background-color 0.5s;
+        
+    .wind, .rain {
+        text-align: center;
+    }
+
+    span {
+        font-weight: inherit;
+        color: var(--secondary-text-color);
+        text-transform: uppercase;
+        transition: color 0.5s;
+    }
+}
+
 @media screen and (min-width: 920px) {
     .hourlyElement {
-        display: grid;
         grid: 2.3em / 4em 3.6em auto 3.3em 4.7em 4.7em;
         // grid: 35px / 60px 55px auto 50px 70px 70px;
-        align-items: center;
-        border-radius: 15px;
+        
         padding: 0.7em 0 0.7em 1em;
         // padding: 10px 0 10px 15px;
+
         margin-right: 10px; // margin to add space from element to scrollbar
-        
-        background-color: rgb(255, 255, 255);
         font-size: 15px;
-        font-weight: 600;
-        text-transform: capitalize;
         
         .hour, .temp {
             // font-size: 18px;
             font-size: 1.2em;
-        }
-        
-        .wind, .rain {
-            text-align: center;
         }
 
         .forecast {
@@ -37,34 +49,18 @@
         
         span {
             font-size: 0.8em;
-            // font-size: 12px;
-            font-weight: inherit;
-            color: #b6b6b6;
-            text-transform: uppercase;
         }
     }
 }
 
 @media screen and (max-width: 920px) {
     .hourlyElement {
-        display: grid;
         grid: 30px / 40px 40px auto 40px 45px 50px;
-        align-items: center;
-        border-radius: 15px;
         padding: 10px 0 10px 15px;
-        
-        background-color: rgb(255, 255, 255);
         font-size: 14px;
-        font-weight: 600;
-        text-transform: capitalize;
 
-        
         .hour, .temp {
             font-size: 15px;
-        }
-        
-        .wind, .rain {
-            text-align: center;
         }
 
         .forecast {
@@ -78,54 +74,6 @@
         
         span {
             font-size: 12px;
-            font-weight: inherit;
-            color: #b6b6b6;
-            text-transform: uppercase;
         }
     }
 }
-
-// @media screen and (max-width: 920px) {
-//     .hourlyElement {
-//         display: grid;
-//         grid: 2.3em / 4em 3.6em auto 3.3em 4.7em 4.7em;
-//         // grid: 35px / 60px 55px auto 50px 70px 70px;
-//         align-items: center;
-//         border-radius: 15px;
-//         padding: 0.7em 0 0.7em 1em;
-//         // padding: 10px 0 10px 15px;
-//         margin-right: 10px; // margin to add space from element to scrollbar
-        
-//         background-color: rgb(255, 255, 255);
-//         font-size: 13px;
-//         font-weight: 600;
-//         text-transform: capitalize;
-        
-//         .hour, .temp {
-//             // font-size: 18px;
-//             font-size: 1.2em;
-//         }
-        
-//         .wind, .rain {
-//             text-align: center;
-//         }
-
-//         .forecast {
-//             margin-right: 1em;
-//             // margin-right:15px;
-//         }
-        
-//         > img {
-//             width: 2.3em;
-//             height: 2.3em;
-//         }
-        
-//         span {
-//             font-size: 0.8em;
-//             // font-size: 12px;
-//             font-weight: inherit;
-//             color: #b6b6b6;
-//             text-transform: uppercase;
-//         }
-//     }
-// }

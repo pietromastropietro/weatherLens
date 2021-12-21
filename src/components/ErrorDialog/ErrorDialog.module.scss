@@ -11,44 +11,45 @@
     place-content: center;
 }
 .errorDialog {
-    background-color: white;
+    background-color:var(--primary-color);
     border-radius: 15px;
-    padding: 20px;
-    width: 400px;
+    padding: 1.3em;
+    width: 23em;
     
     display: flex;
     flex-direction: column;
     // align-items: center;
     text-align: center;
+
+    font-size: 15px;
     
     h2 {
-        margin: 20px 0;
+        margin: 1.3rem 0;
         font-weight: 600;
-        font-size: 22px;
+        font-size: 1.5em;
     }
 
     p {
-        font-size: 15px;
         font-weight: 500;
     }
 
     
     button {
-        margin-top: 20px;
+        margin-top: 1.3em;
         align-self: center;
         width: fit-content;
         background: none;
         font: inherit;
         font-weight: 600;
-        font-size: 16px;
+        // font-size: 16px;
         cursor: pointer;
         padding-bottom: 2px;
         transition: 0.2s;
-        
+        color: var(--primary-text-color);
         border-bottom: 1.5px solid transparent; // to account for hover border
 
         &:hover {
-            border-bottom: 1.5px solid black;
+            border-bottom: 1.5px solid var(--primary-text-color);
 
         }
     }
@@ -64,4 +65,11 @@
         color: white;
         font-size: 40px;
     }
+}
+
+@media screen and (max-width: 920px) {
+    .errorDialog {
+        font-size: 13px;
+    }
+
 }

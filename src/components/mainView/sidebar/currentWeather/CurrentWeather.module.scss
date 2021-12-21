@@ -5,6 +5,7 @@
         font-weight: 500;
     }
 
+    // TODO: scope this (now it also affects the units switch "p")
     p {
         font-weight: 600;
         text-transform: capitalize;
@@ -13,6 +14,7 @@
     span {
         font-weight: inherit;
         color: var(--secondary-text-color);
+        transition: color 0.5s;
     }
     
     img {
@@ -30,7 +32,6 @@
         margin-top: 7px;
     }
 }
-
 
 @media screen and (min-width: 920px) {
     .currentWeather {
@@ -94,14 +95,15 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         grid-auto-flow: column;
+    }
 
-        div {
-            justify-self: flex-end;
+    .UnitsSwitchContainer {
+        justify-self: flex-end;
 
-            p {
-                font-size: 14px;
-            }   
-        }
+        // TODO: remove this
+        p {
+            font-size: 14px;
+        }   
     }
 
     .weather {
@@ -109,10 +111,6 @@
         grid-template-columns:auto auto;
         grid-template-rows: 1fr 0.5fr;
         column-gap: 30px;
-
-        div {
-            align-self: flex-end;                    
-        }
 
         img {
             justify-self: flex-end;
@@ -122,6 +120,10 @@
         > p {
             width: 80px;
         }
+    }
+
+    .temp {
+        align-self: flex-end;                    
     }
 }
 

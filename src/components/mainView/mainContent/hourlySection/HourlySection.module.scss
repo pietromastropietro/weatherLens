@@ -1,54 +1,67 @@
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.days {
+    display: flex;
+    
+    h1 {
+        cursor: pointer;
+        padding-bottom: 2px;
+        font-weight: 600;
+        color: var(--secondary-text-color);
+        transition: color 0.5s, border 0.5s;
+
+        &.active {
+            color: var(--primary-text-color);
+            border-bottom: 1.5px solid var(--primary-text-color) !important;
+        }
+        
+        &:hover {
+            transition: 0.2s;
+            border-bottom: 1.5px solid var(--secondary-text-color);
+        }
+    }
+}
+
+.weatherLabels {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    color: var(--secondary-text-color);
+    transition: color 0.5s;
+    font-weight: 500;
+}
+
+ul { 
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
 @media screen and (min-width: 920px) {
     .hourlySection {
         margin-top: 70px;
     }
 
-    .heading {
-        display: flex;
-        justify-content: space-between;
-        align-items:flex-end;
-    }
-
     .days {
-        display: flex;
         column-gap: 20px;
         margin: 0 0 20px 3px;
         
         h1 {
-            cursor: pointer;
             font-size: 22px;
-            font-weight: 600;
-            padding-bottom: 2px;
-            color: #b6b6b6;
-            transition: 0.2s;
-            
-            &.active {
-                color: black;
-                border-bottom: 1.5px solid black !important;
-            }
-            
-            &:hover {
-                border-bottom: 1.5px solid #b6b6b6;
-            }
         }
     }
 
     .weatherLabels {
-        display: flex;
-        justify-content: space-between;
         width: 100px;
         margin: 0 39px 5px 0;
-        
-        text-align: center;
-        color: #b6b6b6;
         font-size: 12px;
-        font-weight: 500;
     }
 
     ul { 
-        display: flex;
-        flex-direction: column;
-        row-gap: 5px;
         overflow: auto;
         scrollbar-gutter: stable;
         height: 300px;
@@ -60,52 +73,18 @@
         margin-top: 30px;
     }
 
-    .heading {
-        display: flex;
-        justify-content: space-between;
-        align-items:flex-end;
-    }
-
     .days {
-        display: flex;
         column-gap: 15px;
         margin: 0 0 10px 3px;
         
         h1 {
-            cursor: pointer;
             font-size: 18px;
-            font-weight: 600;
-            padding-bottom: 2px;
-            color: #b6b6b6;
-            transition: 0.2s;
-            
-            &.active {
-                color: black;
-                border-bottom: 1.5px solid black !important;
-            }
-            
-            &:hover {
-                border-bottom: 1.5px solid #b6b6b6;
-            }
         }
     }
 
     .weatherLabels {
-        display: flex;
-        justify-content: space-between;
         width: 70px;
         margin: 0 15px 5px 0;
-        
-        text-align: center;
-        color: #b6b6b6;
         font-size: 10px;
-        font-weight: 500;
-        // border: 1px solid black;
-    }
-
-    ul { 
-        display: flex;
-        flex-direction: column;
-        row-gap: 5px;
     }
 }

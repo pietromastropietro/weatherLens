@@ -14,7 +14,6 @@ const MainContent = () => {
                     <UnitsSwitch />
 
                     <ThemeSwitch />
-
                 </div>
 
                 <WeekSection />

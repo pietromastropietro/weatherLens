@@ -1,8 +1,22 @@
 .switch {
-    width: 20px;
-    height: 20px;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--primary-text-color);
+    display: flex;
+    width: 26px;
+    height: 26px;
+    padding: 4px;
     border-radius: 50%;
-    color: white;
-    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+
+    div {
+        background-color: var(--primary-color);
+        width: 13px;
+        height: 26px;
+        transition: 0.5s;
+        border-top-left-radius: 200% 100%;
+        border-bottom-left-radius: 200% 100%;
+    }
+}
+.rotate {
+    transform: rotate(180deg);
 }

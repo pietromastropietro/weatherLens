@@ -1,11 +1,13 @@
 @use 'static/scss/constants';
 
 .searchContainer {
-    background-color: #f6f6f8;
+    background-color: var(--secondary-color);
     position: relative;
     border-radius: 20px;
     font-size: 15px;
     font-weight: 500;
+    width: 100%;
+    transition: 0.5s;
 
     &.expand {
         border-radius: 20px 20px 0 0;
@@ -16,8 +18,9 @@
     align-items: center;
     column-gap: 10px;
     padding: 10px 20px;
-
+    
     input {
+        color: var(--primary-text-color);
         border: none;
         outline: none;
         background-color: transparent;
@@ -31,7 +34,7 @@
     }
 }
 .results {
-    background-color: #f6f6f8;
+    background-color: var(--secondary-color);
     position: absolute;
     width: calc(100% - 23px); // to account for padding (43px)
     height: 0;
@@ -62,7 +65,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             margin-left: 3px; // act as space between words, couldn't do it in the html
-            color: #b6b6b6;
+            color: var(--secondary-text-color);
         }
         
         &:hover {

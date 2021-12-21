@@ -1,16 +1,9 @@
-import style from './LoadingSpinner.module.scss'
+import { spinner } from './LoadingSpinner.module.scss'
 
 const LoadingSpinner = () => {
     return (
-        <div className={style["lds-ring"]}>
-            <div>
-            </div>
-            <div>
-            </div>
-            <div>
-            </div>
-            <div>
-            </div>
+        <div className={spinner}>
+            <div></div><div></div><div></div><div></div>
         </div>
     )
 }

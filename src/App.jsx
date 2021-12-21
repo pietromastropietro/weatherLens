@@ -48,9 +48,9 @@ const App = () => {
 	}, [unit, location]) // so when unit or location changes it fecthes the data automatically, no need to do anything
 
 	return (
-		<div className={style.test} data-theme={theme}>
+		<div className={style.body} data-theme={theme}>
 
-			<main >
+			<main className={style.mainContainer}>
 				{error && <ErrorDialog setError={setError} />}
 
 				{loading ?
