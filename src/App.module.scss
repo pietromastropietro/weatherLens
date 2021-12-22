@@ -4,13 +4,26 @@
     background-color: var(--primary-color);
     color: var(--primary-text-color);
     transition: background 0.5s;
+    position: relative;
 } 
 
 .loadingSpinnerContainer {
-    display: grid;
-    place-content: center;
+    background-color: rgba(255, 255, 255, 0.856);
+    position: absolute;
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
+    z-index: 1;
+}
+
+// blur effect under loading spinner for browsers that support it
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .loadingSpinnerContainer {
+        background-color: rgba(230, 230, 230, 0.466);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+    }
 }
 
 @media screen and (min-width: 920px) {
@@ -28,10 +41,14 @@
         border-radius: 50px;
         box-shadow: 0px 50px 47px -20px rgba(0, 0, 0, 0.349);   
     } 
+    .loadingSpinnerContainer {
+        align-items: center;
+        border-radius: 50px;
+    }
 }
 
 @media screen and (max-width: 920px) {
-    .loadingSpinnerContainer {
-        margin-top: 100px;
+    .loadingSpinnerContainer div {
+        margin-top: 300px;
     }
 }

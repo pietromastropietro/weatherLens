@@ -5,7 +5,7 @@ import { Context } from 'App';
 import { useContext } from 'react';
 
 const HourlySection = () => {
-    const { weatherData } = useContext(Context);
+    const { unit, weatherData } = useContext(Context);
 
     // Calculate how many hours remain until midnight (first element of weatherData.hourly refers to the hour in which the request has been made)
     const hoursLeftUntilMidnight = 24 - (new Date(weatherData.hourly[0].dt * 1000).getHours());
@@ -40,7 +40,7 @@ const HourlySection = () => {
                 </div>
 
                 <div className={style.weatherLabels}>
-                    <p>Wind<br />km/h</p>
+                    <p>Wind<br />{unit === "metric" ? "km/h" : "mp/h"}</p>
                     <p>Rain <br />mm </p>
                 </div>
             </div>
@@ -50,6 +50,7 @@ const HourlySection = () => {
                     <HourlyElement
                         key={hourlyData.dt}
                         hourlyData={hourlyData}
+                        unit={unit}
                     />
                 )}
             </ul>

@@ -22,32 +22,40 @@ const Searchbar = () => {
         }
     }
 
-    const changeWeatherData = () => {
-        // temp, for testing
-        setCitiesResults([])
+    const changeWeatherData = (index) => {
+        setLocation(citiesResults[index]);
 
-        //reset input field
+        // reset input field and results
         setCity("")
-
-        // setLocation(city)
+        setCitiesResults([])
     }
 
     // fetch cities from the openweather api (limited to 4 results)
     const fetchData = async (city) => {
         try {
-            // const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=4&appid=f1da688d16302a59f515543adff493fe`);
+            const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=4&appid=${process.env.REACT_APP_API_KEY}`);
 
             // temp, for testing
-            const response = {
-                data: [
-                    { name: "Rome", country: "Lazio" },
-                    { name: "London", state: "UK" },
-                    { name: "Ventimiglia", country: "Liguria" },
-                    { name: "New York City", country: "USA" }
-                ]
-            }
-
-            // console.log("response: " + JSON.stringify(response, null, 2));
+            // const response = {
+            //     data: [
+            //         {
+            //             "name": "Monaco",
+            //             "country": "MC"
+            //         }, {
+            //             "name": "Round Nap Island",
+            //             "country": "GB",
+            //             "state": "England"
+            //         }, {
+            //             "name": "Ko Khao Nap Nam",
+            //             "country": "TH",
+            //             "state": "Phang-nga Province"
+            //         }, {
+            //             "name": "Ban Nap Pao",
+            //             "country": "TH",
+            //             "state": "Nakhon Si Thammarat Province"
+            //         }
+            //     ]
+            // };
 
             if (response.data.length === 0) {
                 alert("No city found, please try again.");
@@ -55,7 +63,7 @@ const Searchbar = () => {
                 setCitiesResults(response.data);
             }
         } catch (err) {
-            alert('Error, try again. If the error persists, please contact the owner (GitHub link in the "info" section).');
+            alert('Something went wrong. Please try again later');
         };
     }
 
@@ -68,16 +76,19 @@ const Searchbar = () => {
             </div>
 
             <ul className={`${style.results} ${citiesResults.length !== 0 && style.expand}`}>
-                {citiesResults.map(city =>
-                    <li onClick={changeWeatherData}>
+                {citiesResults.map((city, index) =>
+                    <li onClick={() => changeWeatherData(index)} key={index}>
                         <img src={icon} alt="" />
-                        {/* 
-                        I used two p's instead of a p+span cause city name and state/country are different colors,
-                        and the dot ellipsis at the end would inherit the color of the city name (black)
-                        instead of the color of the state/country (grey) which is the actual truncated word
-                        */}
-                        <p>{city.name},</p>
-                        <p>{city.state || city.country}</p>
+
+                        <div>
+                            <p>{city.name}</p>
+
+                            <p>{
+                                city.state ?
+                                    `${city.state}, ${city.country}` :
+                                    city.country
+                            }</p>
+                        </div>
                     </li>
                 )}
             </ul>

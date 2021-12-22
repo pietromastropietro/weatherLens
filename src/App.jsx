@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import MainContent from './components/mainView/mainContent/MainContent'
 import Sidebar from './components/mainView/sidebar/Sidebar';
-import { defaultData, defaultCity } from './default.js'
+import { defaultData } from './default.js'
 import style from './App.module.scss'
 import axios from 'axios';
 import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
@@ -11,41 +11,33 @@ export const Context = createContext();
 
 const App = () => {
 	const [unit, setUnit] = useState('metric');
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(false); // must be true for prod
 	const [error, setError] = useState(false);
 
-	const [weatherData, setWeatherData] = useState(defaultData);
-	const [location, setLocation] = useState(defaultCity);
+	const [weatherData, setWeatherData] = useState(defaultData.weather);
+	const [location, setLocation] = useState(defaultData.location);
 
 	const [theme, setTheme] = useState("light");
 
-	const contextValues = { weatherData, loading, unit, setUnit, location, setLocation, theme, setTheme }
+	const contextValues = { weatherData, unit, setUnit, location, setLocation, theme, setTheme, loading };
 
 	useEffect(() => {
 		// Gets weather data for the city (by lat & lon) from the openweatherAPI and returns the JSON
-
 		const fetchData = async (lat, lon) => {
-			// const fetchData = async () => {
-			// toggleModal();
+			setLoading(true);
+
 			try {
-				// const response = [];
-				const response = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&units=${unit}&appid=`)
-				console.log("fetch");
-				console.log("response: " + JSON.stringify(response, null, 2));
-
-				// toggleModal();
+				const response = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&units=${unit}&appid=${process.env.REACT_APP_API_KEY}`)
 				setWeatherData(response.data);
-
-				setLoading(false);
 			} catch (err) {
-				// alert('Error, try again. If the error persists, please contact the owner (GitHub link in the "info" section).');
-				console.log('Error, try again. If the error persists, please contact the owner (GitHub link in the "info" section).');
+				console.log(err);
+				setError(true);
+			} finally {
+				setLoading(false)
 			};
-			// toggleModal();
 		};
-
 		// fetchData(location.lat, location.lon);
-	}, [unit, location]) // so when unit or location changes it fecthes the data automatically, no need to do anything
+	}, [unit, location]);
 
 	return (
 		<div className={style.body} data-theme={theme}>
@@ -53,16 +45,16 @@ const App = () => {
 			<main className={style.mainContainer}>
 				{error && <ErrorDialog setError={setError} />}
 
-				{loading ?
+				{loading &&
 					<div className={style.loadingSpinnerContainer}>
 						<LoadingSpinner />
 					</div>
-					:
-					<Context.Provider value={contextValues}>
-						<Sidebar />
-						<MainContent />
-					</Context.Provider>
 				}
+
+				<Context.Provider value={contextValues}>
+					<Sidebar />
+					<MainContent />
+				</Context.Provider>
 			</main>
 		</div>
 	);
