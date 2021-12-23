@@ -7,15 +7,14 @@ const ErrorDialog = ({ setError }) => {
 
 						<div className={style.icon}>!</div>
 
-						<h2>Something went wrong</h2>
+						<h2>Weather data not available</h2>
 
 						<p>
-							Weather data not available,
-							if the problem persists please report it
-							<a href=""> here</a>.<br /><br />
-							You can try the app, but the data aren't updated.
+							If the problem persists please report it
+							<a href="https://github.com/pietromastropietro/weather-react" target="_blank" rel="noreferrer"> here</a>.
+							<br />
+							You can try the app, but data aren't updated.
 						</p>
-
 						<button onClick={() => setError(false)}>Try the app</button>
 					</div>
 				</div>

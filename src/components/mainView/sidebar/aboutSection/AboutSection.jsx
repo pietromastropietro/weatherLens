@@ -4,17 +4,17 @@ import githubLogo from 'static/images/github.png'
 import linkedin from 'static/images/linkedin.svg'
 
 const AboutSection = () => {
-    const [show, setshow] = useState(false);
+    const [dialogVisibility, setDialogVisibility] = useState(false);
 
-    const toggle = () => {
-        setshow(!show)
+    const toggleDialog = () => {
+        setDialogVisibility(!dialogVisibility)
     }
 
 
     return (
         <>
-            <div className={style.aboutLink} onClick={toggle}>About WeatherApp</div>
-            {show &&
+            <div className={style.aboutLink} onClick={toggleDialog}>About WeatherApp</div>
+            {dialogVisibility &&
                 <div className={style.aboutOverlay}>
 
                     <div className={style.aboutDialog}>
@@ -43,7 +43,7 @@ const AboutSection = () => {
                             <p>Copyright &copy; 2021.</p>
                         </div>
 
-                        <button onClick={toggle}>Close</button>
+                        <button onClick={toggleDialog}>Close</button>
                     </div>
                 </div>
             }

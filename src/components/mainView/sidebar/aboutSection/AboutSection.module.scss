@@ -4,7 +4,7 @@
     padding: 15px 10px;
     cursor: pointer;
     text-align: center;
-    font-size: 16px;
+    // font-size: 16px;
     font-weight: 600;
     border-radius: 15px;
     transition: background 0.5s;
@@ -34,10 +34,10 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    font-size: 15px;
+    // font-size: 15px;
 
     h1 {
-        font-size: 2em;
+        font-size: 1.9em;
         font-weight: 600;
     }
 
@@ -47,6 +47,7 @@
     }
 
     p {
+        // font-size: 1em;
         font-size: 0.8em;
         color: var(--secondary-text-color);
     }

@@ -21,7 +21,6 @@
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .loadingSpinnerContainer {
         background-color: rgba(230, 230, 230, 0.466);
-        -webkit-backdrop-filter: blur(4px);
         backdrop-filter: blur(4px);
     }
 }
@@ -30,14 +29,17 @@
     .body {
         display: flex;
         justify-content: center;
-        padding: 50px 40px;
+        height: 100%;
         background-color: var(--page-bg);
         transition: background 0.5s;
+        overflow: auto;
+        scrollbar-gutter: stable;
     }
     .mainContainer { 
         display: flex;
-        width: 1174px;
-        min-height: 700px;
+        width: 1237px;
+        height: 861px;
+        margin: 50px 40px;
         border-radius: 50px;
         box-shadow: 0px 50px 47px -20px rgba(0, 0, 0, 0.349);   
     } 

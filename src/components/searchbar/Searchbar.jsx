@@ -35,28 +35,6 @@ const Searchbar = () => {
         try {
             const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=4&appid=${process.env.REACT_APP_API_KEY}`);
 
-            // temp, for testing
-            // const response = {
-            //     data: [
-            //         {
-            //             "name": "Monaco",
-            //             "country": "MC"
-            //         }, {
-            //             "name": "Round Nap Island",
-            //             "country": "GB",
-            //             "state": "England"
-            //         }, {
-            //             "name": "Ko Khao Nap Nam",
-            //             "country": "TH",
-            //             "state": "Phang-nga Province"
-            //         }, {
-            //             "name": "Ban Nap Pao",
-            //             "country": "TH",
-            //             "state": "Nakhon Si Thammarat Province"
-            //         }
-            //     ]
-            // };
-
             if (response.data.length === 0) {
                 alert("No city found, please try again.");
             } else {
@@ -77,7 +55,10 @@ const Searchbar = () => {
 
             <ul className={`${style.results} ${citiesResults.length !== 0 && style.expand}`}>
                 {citiesResults.map((city, index) =>
-                    <li onClick={() => changeWeatherData(index)} key={index}>
+                    <li
+                        onClick={() => changeWeatherData(index)}
+                        key={index}
+                    >
                         <img src={icon} alt="" />
 
                         <div>

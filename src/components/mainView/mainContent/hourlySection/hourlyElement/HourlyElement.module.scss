@@ -6,9 +6,12 @@
     border-radius: 15px;
     background-color: var(--primary-color);
     font-weight: 600;
-    text-transform: capitalize;
     transition: background-color 0.5s;
-        
+    
+    .forecast {
+        text-transform: capitalize;
+    }
+    
     .wind, .rain {
         text-align: center;
     }
@@ -16,7 +19,7 @@
     span {
         font-weight: inherit;
         color: var(--secondary-text-color);
-        text-transform: uppercase;
+        text-transform: lowercase;
         transition: color 0.5s;
     }
 }
@@ -30,25 +33,18 @@
         // padding: 10px 0 10px 15px;
 
         margin-right: 10px; // margin to add space from element to scrollbar
-        font-size: 15px;
         
-        .hour, .temp {
-            // font-size: 18px;
-            font-size: 1.2em;
-        }
-
+        // font-size: 15px;
+        // font-size: 16px;
+        
         .forecast {
             margin-right: 1em;
             // margin-right:15px;
         }
         
-        > img {
+        > figure {
             width: 2.3em;
             height: 2.3em;
-        }
-        
-        span {
-            font-size: 0.8em;
         }
     }
 }
@@ -57,23 +53,16 @@
     .hourlyElement {
         grid: 30px / 40px 40px auto 40px 45px 50px;
         padding: 10px 0 10px 15px;
-        font-size: 14px;
 
-        .hour, .temp {
-            font-size: 15px;
-        }
+        font-size: 14px;
 
         .forecast {
             margin-right:15px;
         }
         
-        > img {
+        > figure {
             width: 30px;
             height: 30px;
-        }
-        
-        span {
-            font-size: 12px;
         }
     }
 }
