@@ -1,6 +1,11 @@
-import style from './ThemeSwitch.module.scss';
-import { Context } from 'App';
+// React import
 import { useContext } from 'react';
+
+// Context import
+import { Context } from 'App';
+
+// Style import
+import style from './ThemeSwitch.module.scss';
 
 const ThemeSwitch = () => {
 	const { theme, setTheme } = useContext(Context);
@@ -12,6 +17,7 @@ const ThemeSwitch = () => {
 			setTheme("light")
 		}
 	}
+	
 	return (
 		<div
 			onClick={changeTheme}

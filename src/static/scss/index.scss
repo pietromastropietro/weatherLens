@@ -7,8 +7,6 @@
     --secondary-color: #f6f6f8;
     --primary-text-color: #000000;
     --secondary-text-color: #b6b6b6;
-
-    --search-img-filter: none;
 }
 
 [data-theme='dark'] {
@@ -25,11 +23,9 @@
     --secondary-color: #222222;
     --primary-text-color: #f1f1f1;
     --secondary-text-color: #6e6d6d; //5e5d5d  //a09fa0
-
-    --search-img-filter: invert(100%);
     
     img {
-        opacity: 0.9;
+        // opacity: 0.9;
     }
 }
 
@@ -51,24 +47,25 @@ h1, h2, h3, h4, h5, h6, figure, legend, span {
 }
 
 /* SCROLLBAR */
+// Firefox
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-text-color) transparent;
+}
 
-// Whole scrollbar
+// Chrome, Edge, and Safari
 ::-webkit-scrollbar {
     width: 8px;
-    height: 8px;
 }
-// Only track
 ::-webkit-scrollbar-track {
-    background: rgba(204, 204, 204, 0.37);
-    border-radius: 20px;
+    background: transparent;
 }
-// Only bar
 ::-webkit-scrollbar-thumb {
-    background: rgba(192, 192, 192, 0.774);
+    background-color: var(--secondary-text-color);
     border-radius: 20px;
 
     &:hover {
-        background: rgba(170, 170, 170, 0.884);
+        background-color: #c9c9c9;
     }
 }
 
@@ -78,12 +75,4 @@ html, body, #root {
 }
 body {
     font-family: 'Montserrat', sans-serif;
-}
-a {
-    text-decoration: none;
-    color: rgb(67, 149, 255);
-    font-weight: 700;
-}
-a:hover {
-    color: rgb(0, 110, 255);
 }

@@ -1,12 +1,13 @@
+@use 'static/scss/constants';
+
 .aboutLink {
     display: grid;
     place-content: center;
     padding: 15px 10px;
     cursor: pointer;
     text-align: center;
-    // font-size: 16px;
     font-weight: 600;
-    border-radius: 15px;
+    border-radius: constants.$secondary-border-radius;
     transition: background 0.5s;
 }
 
@@ -18,7 +19,6 @@
     top: 0;
     left: 0;
     z-index: 1;
-
     display: grid;
     place-content: center;
 }
@@ -28,13 +28,12 @@
     width: 22em;
     height: 16em;
     padding: 1.3em;
-    border-radius: 15px;
+    border-radius: constants.$secondary-border-radius;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    // font-size: 15px;
 
     h1 {
         font-size: 1.9em;
@@ -47,7 +46,6 @@
     }
 
     p {
-        // font-size: 1em;
         font-size: 0.8em;
         color: var(--secondary-text-color);
     }
@@ -64,10 +62,10 @@
 
         &:hover {
             border-bottom: 1.5px solid var(--primary-text-color);
-
         }
     }
 }
+
 .icons {
     display: flex;
     column-gap: 0.6em;
@@ -98,6 +96,7 @@
         background-color: var(--secondary-color);
     }
 }
+
 @media screen and (max-width: 920px) {
     .aboutLink {
         background-color: var(--primary-color);

@@ -1,7 +1,12 @@
+// React import
 import { useState } from 'react';
-import style from './AboutSection.module.scss'
+
+// Static files import
 import githubLogo from 'static/images/github.png'
 import linkedin from 'static/images/linkedin.svg'
+
+// Style import
+import style from './AboutSection.module.scss'
 
 const AboutSection = () => {
     const [dialogVisibility, setDialogVisibility] = useState(false);
@@ -10,15 +15,13 @@ const AboutSection = () => {
         setDialogVisibility(!dialogVisibility)
     }
 
-
     return (
         <>
             <div className={style.aboutLink} onClick={toggleDialog}>About WeatherApp</div>
+
             {dialogVisibility &&
                 <div className={style.aboutOverlay}>
-
                     <div className={style.aboutDialog}>
-
                         <div className={style.icons}>
                             <a href="https://github.com/pietromastropietro" target="_blank" rel="noreferrer">
                                 <img src={githubLogo} alt="github-logo" />

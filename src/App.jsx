@@ -1,28 +1,34 @@
+// React import
 import { createContext, useEffect, useState } from 'react';
+
+// Utils import
+import { defaultData } from './default.js'
+import axios from 'axios';
+
+// Components import
 import MainContent from './components/mainView/mainContent/MainContent'
 import Sidebar from './components/mainView/sidebar/Sidebar';
-import { defaultData } from './default.js'
-import style from './App.module.scss'
-import axios from 'axios';
-import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner';
-import ErrorDialog from 'components/ErrorDialog/ErrorDialog';
+import LoadingSpinner from 'components/loadingSpinner/LoadingSpinner';
+import ErrorDialog from 'components/errorDialog/ErrorDialog';
 
+// Style import
+import style from './App.module.scss'
+
+// Context 
 export const Context = createContext();
 
 const App = () => {
-	const [unit, setUnit] = useState('metric');
-	const [loading, setLoading] = useState(false); // must be true for prod
-	const [error, setError] = useState(false);
-
 	const [weatherData, setWeatherData] = useState(defaultData.weather);
 	const [location, setLocation] = useState(defaultData.location);
-
-	const [theme, setTheme] = useState("light");
+	const [unit, setUnit] = useState('metric');
+	const [theme, setTheme] = useState('dark');
+	const [loading, setLoading] = useState(false); // must be true for prod
+	const [error, setError] = useState(false);
 
 	const contextValues = { weatherData, unit, setUnit, location, setLocation, theme, setTheme, loading };
 
 	useEffect(() => {
-		// Gets weather data for the city (by lat & lon) from the openweatherAPI and returns the JSON
+		// Get weather data from city latitude and longitude
 		const fetchData = async (lat, lon) => {
 			setLoading(true);
 
@@ -37,16 +43,20 @@ const App = () => {
 			};
 		};
 		// fetchData(location.lat, location.lon);
-	}, [unit, location]);
+	}, [unit, location]); // whenere unit or location changes, fetch the appropriate data
 
 	return (
 		<div className={style.body} data-theme={theme}>
 
 			<main className={style.mainContainer}>
-				{error && <ErrorDialog setError={setError} />}
+				{error &&
+					<div className={style.overlay}>
+						<ErrorDialog setError={setError} />
+					</div>
+				}
 
 				{loading &&
-					<div className={style.loadingSpinnerContainer}>
+					<div className={style.overlay}>
 						<LoadingSpinner />
 					</div>
 				}

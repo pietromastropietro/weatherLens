@@ -17,8 +17,6 @@
         font-weight: 600;
         
         &.active {
-            // background-color: black !important;
-            // color: white;
             background-color: var(--primary-text-color) !important;
             color: var(--primary-color);
         }
@@ -29,10 +27,9 @@
         }
     }
 }
+
 @media screen and (max-width: 920px) {
-    .switch {
-        div {
-            background-color: var(--secondary-color);
-        }
+    .switch div {
+        background-color: var(--secondary-color);
     }
 }

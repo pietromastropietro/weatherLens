@@ -1,9 +1,12 @@
+// Components import
 import Searchbar from '../../searchbar/Searchbar';
-import style from './Sidebar.module.scss';
 import CurrentWeather from './currentWeather/CurrentWeather';
 import Weatherstats from './weatherStats/WeatherStats';
 import AboutSection from './aboutSection/AboutSection';
 import ThemeSwitch from 'components/themeSwitch/ThemeSwitch';
+
+// Style import
+import style from './Sidebar.module.scss';
 
 const Sidebar = () => {
     return (
@@ -18,9 +21,7 @@ const Sidebar = () => {
 
             <div>
                 <CurrentWeather />
-
                 <div className={style.separator}></div>
-
                 <Weatherstats />
             </div>
 

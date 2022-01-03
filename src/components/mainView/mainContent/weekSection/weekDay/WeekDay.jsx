@@ -1,12 +1,17 @@
-import style from './WeekDay.module.scss'
-import { format } from 'date-fns';
+// Components import
 import Icon from 'components/icon/Icon';
+
+// Style import
+import style from './WeekDay.module.scss'
+
+// Utils import
+import { format } from 'date-fns';
 
 const WeekDay = ({ dayData }) => {
     const day = format(new Date(dayData.dt * 1000), 'EEE');
     const icon = dayData.weather[0].icon;
 
-    const temp = {
+    const temps = {
         max: Math.round(dayData.temp.max),
         min: Math.round(dayData.temp.min)
     };
@@ -19,7 +24,7 @@ const WeekDay = ({ dayData }) => {
                 <Icon name={icon} />
             </figure>
 
-            <p>{`${temp.max}°`} <span>{`${temp.min}°`}</span></p>
+            <p>{`${temps.max}°`} <span>{`${temps.min}°`}</span></p>
         </div>
     )
 }

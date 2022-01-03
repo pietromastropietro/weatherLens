@@ -1,6 +1,11 @@
-import style from './UnitsSwitch.module.scss'
-import { Context } from 'App';
+// React import
 import { useContext } from 'react';
+
+// Context import
+import { Context } from 'App';
+
+// Style import
+import style from './UnitsSwitch.module.scss'
 
 const UnitsSwitch = () => {
     const { unit, setUnit } = useContext(Context);

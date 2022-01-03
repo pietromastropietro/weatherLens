@@ -1,8 +1,18 @@
-import style from './Searchbar.module.scss';
-import icon from 'static/images/search.svg'
+// React import
 import { useContext, useState } from 'react';
+
+// Utils import
 import axios from 'axios';
+
+// Static files import
+import icon from 'static/images/loc.png'
+// import icon from 'static/images/search.svg'
+
+// Context import
 import { Context } from 'App';
+
+// Style import
+import style from './Searchbar.module.scss';
 
 const Searchbar = () => {
     const { setLocation } = useContext(Context);
@@ -47,10 +57,17 @@ const Searchbar = () => {
 
     return (
         <div className={`${style.searchContainer} ${citiesResults.length !== 0 && style.expand}`}>
-
             <div className={style.searchbar}>
                 <img src={icon} alt="" />
-                <input type="text" value={city} onChange={handleInput} onKeyDown={handleEnterKey} placeholder="Search for a city" autoComplete='off' spellCheck='false' />
+                <input
+                    type="text"
+                    value={city}
+                    onChange={handleInput}
+                    onKeyDown={handleEnterKey}
+                    placeholder="Search for a city"
+                    autoComplete='off'
+                    spellCheck='false'
+                />
             </div>
 
             <ul className={`${style.results} ${citiesResults.length !== 0 && style.expand}`}>
@@ -60,10 +77,8 @@ const Searchbar = () => {
                         key={index}
                     >
                         <img src={icon} alt="" />
-
                         <div>
                             <p>{city.name}</p>
-
                             <p>{
                                 city.state ?
                                     `${city.state}, ${city.country}` :

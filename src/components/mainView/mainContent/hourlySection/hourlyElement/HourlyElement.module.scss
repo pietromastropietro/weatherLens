@@ -3,7 +3,7 @@
 .hourlyElement {
     display: grid;
     align-items: center;
-    border-radius: 15px;
+    border-radius: constants.$secondary-border-radius;
     background-color: var(--primary-color);
     font-weight: 600;
     transition: background-color 0.5s;

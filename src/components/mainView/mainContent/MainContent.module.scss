@@ -2,10 +2,6 @@
 
 .mainContent {
     background-color: var(--secondary-color);
-
-    // width: 700px;
-    // width: 66%;
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,7 +26,7 @@
     .mainContent {
         width: calc(70% - 80px);
         padding: 50px;
-        border-radius:0 50px 50px 0;
+        border-radius: 0 constants.$primary-border-radius constants.$primary-border-radius 0;
     }
 
     .aboutBtnContainer {

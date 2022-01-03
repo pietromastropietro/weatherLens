@@ -7,7 +7,7 @@ const useImage = (fileName) => {
     useEffect(() => {
         const fetchImage = async () => {
             try {
-                const response = await import(`static/images/${fileName}.svg`)
+                const response = await import(`static/images/weather/${fileName}.png`)
                 setImage(response.default)
             } catch (err) {
                 setError(err)

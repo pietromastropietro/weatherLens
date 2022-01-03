@@ -1,7 +1,14 @@
-import style from './WeekSection.module.scss';
-import WeekDay from './weekDay/WeekDay.jsx';
-import { Context } from 'App';
+// React imports
 import { useContext } from 'react';
+
+// Context import
+import { Context } from 'App';
+
+// Components import
+import WeekDay from './weekDay/WeekDay.jsx';
+
+// Style import
+import style from './WeekSection.module.scss';
 
 const WeekSection = () => {
     const { weatherData } = useContext(Context);
@@ -11,14 +18,13 @@ const WeekSection = () => {
             <h1>Week</h1>
 
             <div className={style.daysContainer}>
-                {weatherData.daily.slice(1).map(dayData =>
+                {weatherData.daily.map(dayData =>
                     <WeekDay
                         key={dayData.dt}
                         dayData={dayData}
                     />
                 )}
             </div>
-
         </div>
     )
 }

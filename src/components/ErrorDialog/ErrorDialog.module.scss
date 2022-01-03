@@ -1,26 +1,14 @@
-.errorOverlay {
-    background-color: rgba(128, 128, 128, 0.473);
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
+@use 'static/scss/constants';
 
-    display: grid;
-    place-content: center;
-}
 .errorDialog {
     background-color:var(--primary-color);
-    border-radius: 15px;
+    border-radius: constants.$secondary-border-radius;
     padding: 1.3em;
     width: 23em;
-    
+    height: fit-content;
     display: flex;
     flex-direction: column;
     text-align: center;
-
-    // font-size: 15px;
     
     h2 {
         margin: 1.3rem 0;
@@ -32,7 +20,6 @@
     p {
         font-weight: 500;
     }
-
     
     button {
         margin-top: 3em;
@@ -41,7 +28,6 @@
         background: none;
         font: inherit;
         font-weight: 600;
-        // font-size: 16px;
         cursor: pointer;
         padding-bottom: 2px;
         transition: 0.2s;
@@ -50,7 +36,6 @@
 
         &:hover {
             border-bottom: 1.5px solid var(--primary-text-color);
-
         }
     }
     
@@ -64,6 +49,7 @@
         border-radius: 50%;
         color: white;
         font-size: 40px;
+        margin: 0;
     }
 }
 
@@ -71,5 +57,4 @@
     .errorDialog {
         font-size: 13px;
     }
-
 }

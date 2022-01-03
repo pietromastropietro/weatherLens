@@ -1,8 +1,14 @@
-import { useState } from 'react';
-import style from './HourlySection.module.scss'
-import HourlyElement from './hourlyElement/HourlyElement';
+// React import
+import { useState, useContext } from 'react';
+
+// Context import
 import { Context } from 'App';
-import { useContext } from 'react';
+
+// Components import
+import HourlyElement from './hourlyElement/HourlyElement';
+
+// Style import
+import style from './HourlySection.module.scss'
 
 const HourlySection = () => {
     const { unit, weatherData } = useContext(Context);
@@ -21,7 +27,6 @@ const HourlySection = () => {
 
     return (
         <div className={style.hourlySection}>
-
             <div className={style.heading}>
                 <div className={style.days}>
                     <h1
@@ -41,7 +46,7 @@ const HourlySection = () => {
 
                 <div className={style.weatherLabels}>
                     <p>Wind<br />{unit === "metric" ? "km/h" : "mp/h"}</p>
-                    <p>Rain <br />mm </p>
+                    <p>Rain <br />mm</p>
                 </div>
             </div>
 

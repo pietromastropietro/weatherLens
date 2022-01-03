@@ -1,3 +1,4 @@
+// Style import
 import { spinner } from './LoadingSpinner.module.scss'
 
 const LoadingSpinner = () => {

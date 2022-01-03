@@ -9,9 +9,7 @@
     min-width: 5em;
     height: 6.6em;
     padding: 0.65em;
-    border-radius: 15px;
-    // font-size: 15px;
-    // font-size: 16px;
+    border-radius: constants.$secondary-border-radius;
     font-weight: 600;
     transition: background-color 0.5s;
 

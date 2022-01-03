@@ -1,11 +1,9 @@
 .weatherStats {
-    // margin-top: 40px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
     
     font-weight: 600;
-    // font-size: 15px;
     
     // > p {
     //     text-transform: capitalize;
@@ -18,11 +16,17 @@
 
         > div {
             display: flex;
+            align-items: center;
+            column-gap: 6px;
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
         }
 
         p {
             font-weight: 600;
-            // font-size: 15px;
             
             span {
                 font-size: 12px;

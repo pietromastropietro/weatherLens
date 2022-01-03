@@ -1,6 +1,16 @@
-import style from './WeatherStats.module.scss';
-import { Context } from 'App';
+// React import
 import { useContext } from 'react';
+
+// Context import
+import { Context } from 'App';
+
+// static files import
+import tempsIcon from 'static/images/temps.png'
+import rainIcon from 'static/images/rain.png'
+import windIcon from 'static/images/wind.png'
+
+// Style import
+import style from './WeatherStats.module.scss';
 
 const Weatherstats = () => {
     const { unit, weatherData } = useContext(Context);
@@ -23,14 +33,13 @@ const Weatherstats = () => {
     }
 
     return (
-
         <div className={style.weatherStats}>
 
             {/* <p>{forecast}</p> */}
 
             <div className={style.stat}>
                 <div>
-                    {/* <img src="" alt="" /> */}
+                    <img src={tempsIcon} alt="" />
                     <p>High / Low</p>
                 </div>
 
@@ -39,7 +48,7 @@ const Weatherstats = () => {
 
             <div>
                 <div>
-                    {/* <img src="" alt="" /> */}
+                    <img src={windIcon} alt="" />
                     <p>Wind <span>{unit === "metric" ? "km/h" : "mp/h"}</span></p>
                 </div>
 
@@ -48,7 +57,7 @@ const Weatherstats = () => {
 
             <div>
                 <div>
-                    {/* <img src="" alt="" /> */}
+                    <img src={rainIcon} alt="" />
                     <p>Rain <span>mm</span></p>
                 </div>
 

@@ -7,7 +7,7 @@
     position: relative;
 } 
 
-.loadingSpinnerContainer {
+.overlay {
     background-color: rgba(255, 255, 255, 0.856);
     position: absolute;
     display: flex;
@@ -17,9 +17,9 @@
     z-index: 1;
 }
 
-// blur effect under loading spinner for browsers that support it
+// overlay blur effect for browsers that support it
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-    .loadingSpinnerContainer {
+    .overlay {
         background-color: rgba(230, 230, 230, 0.466);
         backdrop-filter: blur(4px);
     }
@@ -40,17 +40,17 @@
         width: 1237px;
         height: 861px;
         margin: 50px 40px;
-        border-radius: 50px;
+        border-radius: constants.$primary-border-radius;
         box-shadow: 0px 50px 47px -20px rgba(0, 0, 0, 0.349);   
     } 
-    .loadingSpinnerContainer {
+    .overlay {
         align-items: center;
-        border-radius: 50px;
+        border-radius: constants.$primary-border-radius;
     }
 }
 
 @media screen and (max-width: 920px) {
-    .loadingSpinnerContainer div {
-        margin-top: 300px;
+    .overlay div {
+        margin-top: 50%;
     }
 }

@@ -1,10 +1,14 @@
-import style from './HourlyElement.module.scss'
+// Utils import
 import { degToDirection } from 'services/helper/degToDirection';
+
+// Components import
 import Icon from 'components/icon/Icon';
 
+// Style import
+import style from './HourlyElement.module.scss'
+
 const HourlyElement = ({ hourlyData, unit }) => {
-    
-    const temp = hourlyData.temp.toFixed(1);
+    const temperature = hourlyData.temp.toFixed(1);
     const hour = new Date(hourlyData.dt * 1000).getHours();
     const forecast = hourlyData.weather[0].description;
     const rain = hourlyData.rain?.["1h"].toFixed(1) || '-';
@@ -29,7 +33,7 @@ const HourlyElement = ({ hourlyData, unit }) => {
                 <Icon name={icon} />
             </figure>
             <p className={style.forecast}>{forecast}</p>
-            <p>{`${temp}°`}</p>
+            <p>{`${temperature}°`}</p>
             <p className={style.wind}>{wind}<br /><span>{windDirection}</span></p>
             <p className={style.rain}>{rain}</p>
         </li>
