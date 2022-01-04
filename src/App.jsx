@@ -10,6 +10,7 @@ import MainContent from './components/mainView/mainContent/MainContent'
 import Sidebar from './components/mainView/sidebar/Sidebar';
 import LoadingSpinner from 'components/loadingSpinner/LoadingSpinner';
 import ErrorDialog from 'components/errorDialog/ErrorDialog';
+import Overlay from 'components/overlay/Overlay.jsx';
 
 // Style import
 import style from './App.module.scss'
@@ -22,24 +23,27 @@ const App = () => {
 	const [location, setLocation] = useState(defaultData.location);
 	const [unit, setUnit] = useState('metric');
 	const [theme, setTheme] = useState('dark');
+	const [overlay, setOverlay] = useState(false); // must be true for prod
 	const [loading, setLoading] = useState(false); // must be true for prod
 	const [error, setError] = useState(false);
 
-	const contextValues = { weatherData, unit, setUnit, location, setLocation, theme, setTheme, loading };
+	const contextValues = { weatherData, unit, setUnit, location, setLocation, theme, setTheme, loading, overlay, setOverlay };
 
 	useEffect(() => {
 		// Get weather data from city latitude and longitude
 		const fetchData = async (lat, lon) => {
+			setOverlay(true);
 			setLoading(true);
 
 			try {
 				const response = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&units=${unit}&appid=${process.env.REACT_APP_API_KEY}`)
 				setWeatherData(response.data);
+				setOverlay(false);
 			} catch (err) {
 				console.log(err);
 				setError(true);
 			} finally {
-				setLoading(false)
+				setLoading(false);
 			};
 		};
 		// fetchData(location.lat, location.lon);
@@ -49,17 +53,11 @@ const App = () => {
 		<div className={style.body} data-theme={theme}>
 
 			<main className={style.mainContainer}>
-				{error &&
-					<div className={style.overlay}>
-						<ErrorDialog setError={setError} />
-					</div>
-				}
+				{overlay && <Overlay />}
 
-				{loading &&
-					<div className={style.overlay}>
-						<LoadingSpinner />
-					</div>
-				}
+				{error && <ErrorDialog setError={setError} setOverlay={setOverlay} />}
+
+				{loading && <LoadingSpinner />}
 
 				<Context.Provider value={contextValues}>
 					<Sidebar />

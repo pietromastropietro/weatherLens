@@ -2,11 +2,12 @@
 
 .currentWeather {
     h1 {
+        font-size: constants.$header-font-size;
         font-weight: 600;
     }
 
-    // TODO: scope this (now it also affects the units switch "p")
     p {
+        font-size: constants.$secondary-font-size;
         font-weight: 600;
         text-transform: capitalize;
     }
@@ -19,75 +20,34 @@
     
     figure {
         margin: 10px 0;
+        width: 11.9em;
+        height: 11.9em;
     }
 }
+
 .temp {
     display: flex;
 
     > h2 {
+        font-size: constants.$temperature-font-size;
         font-weight: 400;
     }
 
     > p {
+        font-size: constants.$header-font-size;
         margin-top: 7px;
     }
 }
 
-@media screen and (min-width: 920px) {
-    .currentWeather {
-        h1 {
-            font-size: 30px;
-        }
-    
-        p {
-            font-size: 20px;
-        }
-    
-        figure {
-            width: 190px;
-            height: 190px;
-        }
-    }
-
-    .temp {
-        > h2 {
-            font-size: 70px;
-        }
-    
-        > p {
-            font-size: 30px;
-        }
-    }
-
-    .UnitsSwitchContainer {
+@media (min-width: constants.$breakpoint-desktop) {
+    .unitsSwitchContainer {
         display: none;
     }
 }
 
-@media screen and (max-width: 920px) {
+@media (max-width: constants.$breakpoint-mobile) {
     .currentWeather {
-        h1 {
-            font-size: 28px;
-        }
-    
-        p {
-            font-size: 16px;
-        }
-    
-        figure {
-            width: 150px;
-            height: 150px;
-        }
-    }
-
-    .temp {
-        > h2 {
-            font-size: 65px;
-        }
-    
-        > p {
-            font-size: 36px;
-        }
+        font-size: constants.$mobile-font-size;
     }
 
     .header {
@@ -97,13 +57,8 @@
         grid-auto-flow: column;
     }
 
-    .UnitsSwitchContainer {
+    .unitsSwitchContainer {
         justify-self: flex-end;
-
-        // TODO: remove this
-        p {
-            font-size: 14px;
-        }   
     }
 
     .weather {

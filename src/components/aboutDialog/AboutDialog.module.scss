@@ -1,18 +1,6 @@
 @use 'static/scss/constants';
 
-.aboutLink {
-    display: grid;
-    place-content: center;
-    padding: 15px 10px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: 600;
-    border-radius: constants.$secondary-border-radius;
-    transition: background 0.5s;
-}
-
-.aboutOverlay {
-    background-color: rgba(128, 128, 128, 0.473);
+.container {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -23,7 +11,7 @@
     place-content: center;
 }
 
-.aboutDialog {
+.dialog {
     background-color: var(--primary-color);
     width: 22em;
     height: 16em;
@@ -36,17 +24,18 @@
     text-align: center;
 
     h1 {
-        font-size: 1.9em;
+        font-size: constants.$header-font-size;
         font-weight: 600;
     }
 
     h3 {
-        font-size: inherit;
+        font-size: constants.$default-font-size;
         font-weight: 500;
     }
 
     p {
-        font-size: 0.8em;
+        font-size: constants.$default-font-size;
+        font-weight: 500;
         color: var(--secondary-text-color);
     }
     
@@ -91,20 +80,11 @@
     }
 }
 
-@media screen and (min-width: 920px) {
-    .aboutLink {
-        background-color: var(--secondary-color);
-    }
-}
+.link {
+    text-decoration: underline;
+    transition: 0.2s;
 
-@media screen and (max-width: 920px) {
-    .aboutLink {
-        background-color: var(--primary-color);
-        width: 200px;
-    }
-
-    // temp
-    .aboutDialog {
-        font-size: 13px !important;
+    &:hover {
+        color: var(--primary-text-color);
     }
 }

@@ -16,19 +16,29 @@
     margin: 40px 0;
 }
 
-@media screen and (min-width: 920px) {
+@media (min-width: constants.$breakpoint-desktop) {
     .sidebar {
-        width: calc(30% - 100px);
-        padding: 50px 50px;
+        width: calc(30% - 100px); // subtract padding to avoid element stealing space from 'main content' element
+        padding: 50px;
         border-radius: constants.$primary-border-radius 0 0 constants.$primary-border-radius;
     }
 
     .themeSwitchContainer {
         display: none;
     }
+
+    .aboutBtn {
+        background-color: var(--secondary-color);
+        padding: 15px 10px;
+        cursor: pointer;
+        text-align: center;
+        font-weight: 600;
+        border-radius: constants.$secondary-border-radius;
+        transition: background 0.5s;
+    }
 }
 
-@media screen and (max-width: 920px) {
+@media (max-width: constants.$breakpoint-mobile) {
     .sidebar {
         padding: 20px;
     }
@@ -39,7 +49,7 @@
         column-gap: 20px;
     }
 
-    .separator, .aboutBtnContainer {
+    .separator, .aboutBtn {
         display: none;
     }
 }

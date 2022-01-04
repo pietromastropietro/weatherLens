@@ -4,28 +4,10 @@
     background-color: var(--primary-color);
     color: var(--primary-text-color);
     transition: background 0.5s;
-    position: relative;
+    // position: relative;
 } 
 
-.overlay {
-    background-color: rgba(255, 255, 255, 0.856);
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-// overlay blur effect for browsers that support it
-@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-    .overlay {
-        background-color: rgba(230, 230, 230, 0.466);
-        backdrop-filter: blur(4px);
-    }
-}
-
-@media screen and (min-width: 920px) {
+@media (min-width: constants.$breakpoint-desktop) {
     .body {
         display: flex;
         justify-content: center;
@@ -35,22 +17,14 @@
         overflow: auto;
         scrollbar-gutter: stable;
     }
-    .mainContainer { 
+    .mainContainer {
         display: flex;
-        width: 1237px;
-        height: 861px;
+        // width: 1237px;
+        // height: 861px;
+        width: 77.1rem;
+        height: 53.8rem;
         margin: 50px 40px;
         border-radius: constants.$primary-border-radius;
-        box-shadow: 0px 50px 47px -20px rgba(0, 0, 0, 0.349);   
-    } 
-    .overlay {
-        align-items: center;
-        border-radius: constants.$primary-border-radius;
-    }
-}
-
-@media screen and (max-width: 920px) {
-    .overlay div {
-        margin-top: 50%;
+        box-shadow: 0px 50px 47px -20px rgba(0, 0, 0, 0.349);
     }
 }

@@ -33,7 +33,7 @@ const CurrentWeather = () => {
 
                 <p>{date.day}, <span>{date.time}</span></p>
     
-                <div className={style.UnitsSwitchContainer}>
+                <div className={style.unitsSwitchContainer}>
                     <UnitsSwitch />
                 </div>
             </div>
@@ -48,7 +48,7 @@ const CurrentWeather = () => {
                     <p>°{unit === "metric" ? "C" : "F"}</p>
                 </div>
 
-                <p>{forecast}</p>
+                <p className={style.forecast}>{forecast}</p>
             </div>
         </div>
     );

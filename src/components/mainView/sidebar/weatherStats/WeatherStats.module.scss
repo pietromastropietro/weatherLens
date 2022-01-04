@@ -1,48 +1,48 @@
+@use 'static/scss/constants';
+
 .weatherStats {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
-    
+    row-gap: 1.25rem;
     font-weight: 600;
-    
-    // > p {
-    //     text-transform: capitalize;
-    // }
-    
-    
-    > div {
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+
+    div {
         display: flex;
-        justify-content: space-between;
+        align-items: center;
+        column-gap: 0.4rem;
+    }
 
-        > div {
-            display: flex;
-            align-items: center;
-            column-gap: 6px;
-
-            img {
-                width: 25px;
-                height: 25px;
-            }
+    img {
+        width: 1.6rem;
+        height: 1.4rem;
+    }
+    
+    p {
+        font-weight: 600;
+        
+        span {
+            font-size: constants.$label-font-size;
+            font-weight: inherit;
+            color: var(--secondary-text-color);
+            transition: color 0.5s;
         }
+    }
+    
+    .forecast {
+        text-transform: capitalize;
+    }
 
-        p {
-            font-weight: 600;
-            
-            span {
-                font-size: 12px;
-                font-weight: inherit;
-                color: var(--secondary-text-color);
-                transition: color 0.5s;
-            }
-        }
-
-        .minTemp {
-            font-size: 16px;
-        }
+    .minTemp {
+        font-size: constants.$default-font-size;
     }
 }
 
-@media screen and (max-width: 920px) {
+@media (max-width: constants.$breakpoint-mobile) {
     .weatherStats {
         display: none;
     }

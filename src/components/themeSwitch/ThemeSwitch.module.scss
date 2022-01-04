@@ -1,3 +1,5 @@
+@use 'static/scss/constants';
+
 .switch {
     background-color: var(--primary-text-color);
     display: flex;
@@ -20,4 +22,16 @@
 
 .rotate {
     transform: rotate(180deg);
+}
+
+@media (max-width: constants.$breakpoint-mobile) {
+    .switch {
+        width: 22px;
+        height: 22px;
+
+        div {
+            width: 11px;
+            height: 22px;
+        }
+    }
 }

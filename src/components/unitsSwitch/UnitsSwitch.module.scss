@@ -1,3 +1,5 @@
+@use 'static/scss/constants';
+
 .switch {
     display: flex;
     column-gap: 10px;
@@ -8,13 +10,16 @@
         display: grid;
         place-content: center;
         background-color: var(--primary-color);
-        width: 30px;
-        height: 30px;
+        width: 26px;
+        height: 26px;
+        padding: 4px;
         border-radius: 50%;
         transition: 0.5s;
-        
-        font-size: 14px;
         font-weight: 600;
+
+        p {
+            font-size: constants.$default-font-size;
+        }
         
         &.active {
             background-color: var(--primary-text-color) !important;
@@ -28,8 +33,10 @@
     }
 }
 
-@media screen and (max-width: 920px) {
+@media (max-width: constants.$breakpoint-mobile) {
     .switch div {
+        width: 22px;
+        height: 22px;
         background-color: var(--secondary-color);
     }
 }

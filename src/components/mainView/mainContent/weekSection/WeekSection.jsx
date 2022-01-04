@@ -18,7 +18,7 @@ const WeekSection = () => {
             <h1>Week</h1>
 
             <div className={style.daysContainer}>
-                {weatherData.daily.map(dayData =>
+                {weatherData.daily.slice(1).map(dayData => // remove first day (today) because info are already in the sidebar
                     <WeekDay
                         key={dayData.dt}
                         dayData={dayData}

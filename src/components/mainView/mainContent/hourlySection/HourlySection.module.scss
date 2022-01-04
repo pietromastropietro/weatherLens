@@ -1,3 +1,5 @@
+@use 'static/scss/constants';
+
 .heading {
     display: flex;
     justify-content: space-between;
@@ -6,8 +8,11 @@
 
 .days {
     display: flex;
+    column-gap: 1.25rem;
+    margin: 0 0 20px 3px;
     
     h1 {
+        font-size: constants.$secondary-font-size;
         cursor: pointer;
         padding-bottom: 2px;
         font-weight: 600;
@@ -33,58 +38,47 @@
     color: var(--secondary-text-color);
     transition: color 0.5s;
     font-weight: 600;
+    font-size: constants.$label-font-size;
 }
 
 ul { 
     display: flex;
     flex-direction: column;
-    row-gap: 5px;
 }
 
-@media screen and (min-width: 920px) {
+@media (min-width: constants.$breakpoint-desktop) {
     .hourlySection {
         margin-top: 70px;
     }
 
-    .days {
-        column-gap: 20px;
-        margin: 0 0 20px 3px;
-        
-        h1 {
-            font-size: 20px;
-        }
-    }
-
     .weatherLabels {
-        width: 100px;
+        width: 97px;
         margin: 0 39px 5px 0;
-        font-size: 12px;
     }
 
     ul { 
         overflow: auto;
         scrollbar-gutter: stable;
         height: 300px;
+        row-gap: 10px;
     }
 }
 
-@media screen and (max-width: 920px) {
+@media (max-width: constants.$breakpoint-mobile) {
     .hourlySection {
         margin-top: 30px;
     }
 
     .days {
-        column-gap: 15px;
-        margin: 0 0 10px 3px;
-        
-        h1 {
-            font-size: 18px;
-        }
+        margin-bottom: 10px;
     }
 
     .weatherLabels {
-        width: 70px;
-        margin: 0 15px 5px 0;
-        font-size: 10px;
+        width: 69px;
+        margin: 0 28px 5px 0;
+    }
+
+    ul {
+        row-gap: 5px;
     }
 }

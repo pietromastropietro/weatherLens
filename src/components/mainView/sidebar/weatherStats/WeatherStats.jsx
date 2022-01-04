@@ -4,10 +4,13 @@ import { useContext } from 'react';
 // Context import
 import { Context } from 'App';
 
-// static files import
+// Static files import
 import tempsIcon from 'static/images/temps.png'
 import rainIcon from 'static/images/rain.png'
 import windIcon from 'static/images/wind.png'
+
+// Components import
+import Icon from 'components/icon/Icon';
 
 // Style import
 import style from './WeatherStats.module.scss';
@@ -21,9 +24,10 @@ const Weatherstats = () => {
     }
 
     const forecast = weatherData.daily[0].weather[0].description;
+    const icon = weatherData.daily[0].weather[0].icon;
     const rain = weatherData.daily[0].rain?.toFixed(1) || '-';
     let wind = '-'
-    
+
     if (weatherData.daily[0].wind_speed) {
         if (unit === "metric") {
             wind = Math.round(weatherData.daily[0].wind_speed * 3.6); // multiply per 3.6 to convert from m/s to km/h
@@ -35,7 +39,12 @@ const Weatherstats = () => {
     return (
         <div className={style.weatherStats}>
 
-            {/* <p>{forecast}</p> */}
+            <div className={style.stat}>
+                <div>
+                    <Icon name={icon} />
+                    <p className={style.forecast}>{forecast}</p>
+                </div>
+            </div>
 
             <div className={style.stat}>
                 <div>
@@ -46,7 +55,7 @@ const Weatherstats = () => {
                 <p>{temps.max}° <span className={style.minTemp}>{temps.min}°</span></p>
             </div>
 
-            <div>
+            <div className={style.stat}>
                 <div>
                     <img src={windIcon} alt="" />
                     <p>Wind <span>{unit === "metric" ? "km/h" : "mp/h"}</span></p>
@@ -55,7 +64,7 @@ const Weatherstats = () => {
                 <p>{wind}</p>
             </div>
 
-            <div>
+            <div className={style.stat}>
                 <div>
                     <img src={rainIcon} alt="" />
                     <p>Rain <span>mm</span></p>

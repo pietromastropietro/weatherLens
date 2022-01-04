@@ -1,0 +1,17 @@
+.overlay {
+    background-color: rgba(66, 66, 66, 0.767);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+// overlay blur effect for browsers that support it
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .overlay {
+        background-color: rgba(83, 83, 83, 0.418);
+        backdrop-filter: blur(4px);
+    }
+}

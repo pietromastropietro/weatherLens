@@ -1,3 +1,8 @@
+/* MEDIA QUERY BREAKPOINTS */
+$breakpoint-mobile: 1010px;
+$breakpoint-desktop: 1011px;
+
+
 /* BORDER RADIUS */
 $primary-border-radius: 50px;
 $secondary-border-radius: 15px;
@@ -5,10 +10,12 @@ $secondary-border-radius: 15px;
 /* FONT */
 
 // size
-$primary-font-size: 16px;
-$secondary-font-size: 22px;
-$caption-font-size: 12px;
-$other-font-size: 30px;
+$default-font-size: 1em;
+$mobile-font-size: 0.875em;
+$secondary-font-size: 1.25em;
+$label-font-size: 0.75em;
+$header-font-size: 1.875em;
+$temperature-font-size: 4.375em;
 
 // weight
 
