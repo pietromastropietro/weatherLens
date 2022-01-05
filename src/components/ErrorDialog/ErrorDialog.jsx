@@ -12,7 +12,7 @@ const ErrorDialog = ({ setError, setOverlay }) => {
 
 	return (
 		<div className={style.container}>
-			<div className={style.errorDialog}>
+			<div className={style.dialog}>
 				<img src={errorIcon} alt="" />
 				<h2>Weather data not available</h2>
 				<p>

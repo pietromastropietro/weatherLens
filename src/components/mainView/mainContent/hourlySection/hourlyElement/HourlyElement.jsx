@@ -2,7 +2,7 @@
 import { degToDirection } from 'services/helper/degToDirection';
 
 // Components import
-import Icon from 'components/icon/Icon';
+import WeatherIcon from 'components/weatherIcon/WeatherIcon';
 
 // Style import
 import style from './HourlyElement.module.scss'
@@ -30,7 +30,7 @@ const HourlyElement = ({ hourlyData, unit }) => {
         <li className={style.hourlyElement}>
             <p>{hour}<span>:00</span></p>
             <figure>
-                <Icon name={icon} />
+                <WeatherIcon name={icon} />
             </figure>
             <p className={style.forecast}>{forecast}</p>
             <p>{`${temperature}°`}</p>

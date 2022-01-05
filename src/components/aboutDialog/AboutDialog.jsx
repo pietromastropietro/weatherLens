@@ -25,8 +25,8 @@ const AboutDialog = ({ toggleAboutDialog }) => {
 
                 <div>
                     <p>
-                        Weather icons by <a href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noreferrer" className={style.link}>Freepik</a>,
-                        from <a href="https://www.flaticon.com/" target="_blank" rel="noreferrer" className={style.link}>Flaticon.</a>
+                        Icons by <a href="https://www.flaticon.com/authors/justicon" target="_blank" rel="noreferrer" className={style.link}>Justicon</a>,
+                        from <a href="https://www.flaticon.com/" target="_blank" rel="noreferrer" className={style.link}>flaticon.com</a>
                     </p>
                     <p>Copyright &copy; 2021.</p>
                 </div>

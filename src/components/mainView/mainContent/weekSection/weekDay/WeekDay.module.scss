@@ -10,11 +10,9 @@
     height: 6.6em;
     padding: 0.65em;
     border-radius: constants.$secondary-border-radius;
-    font-weight: 600;
     transition: background-color 0.5s;
 
     span {
-        font-weight: inherit;
         color: var(--secondary-text-color);
         transition: color 0.5s;
     }

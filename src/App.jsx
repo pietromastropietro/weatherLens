@@ -54,9 +54,7 @@ const App = () => {
 
 			<main className={style.mainContainer}>
 				{overlay && <Overlay />}
-
 				{error && <ErrorDialog setError={setError} setOverlay={setOverlay} />}
-
 				{loading && <LoadingSpinner />}
 
 				<Context.Provider value={contextValues}>

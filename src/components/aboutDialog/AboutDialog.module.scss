@@ -25,24 +25,20 @@
 
     h1 {
         font-size: constants.$header-font-size;
-        font-weight: 600;
     }
 
-    h3 {
+    h3, p {
         font-size: constants.$default-font-size;
         font-weight: 500;
     }
 
     p {
-        font-size: constants.$default-font-size;
-        font-weight: 500;
         color: var(--secondary-text-color);
     }
     
     button {
         background: none;
         font: inherit;
-        font-weight: 600;
         cursor: pointer;
         padding-bottom: 2px;
         transition: 0.2s;

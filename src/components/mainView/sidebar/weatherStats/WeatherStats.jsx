@@ -10,7 +10,7 @@ import rainIcon from 'static/images/rain.png'
 import windIcon from 'static/images/wind.png'
 
 // Components import
-import Icon from 'components/icon/Icon';
+import WeatherIcon from 'components/weatherIcon/WeatherIcon';
 
 // Style import
 import style from './WeatherStats.module.scss';
@@ -41,7 +41,7 @@ const Weatherstats = () => {
 
             <div className={style.stat}>
                 <div>
-                    <Icon name={icon} />
+                    <WeatherIcon name={icon} />
                     <p className={style.forecast}>{forecast}</p>
                 </div>
             </div>

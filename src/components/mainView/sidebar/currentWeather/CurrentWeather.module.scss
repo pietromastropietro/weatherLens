@@ -3,17 +3,14 @@
 .currentWeather {
     h1 {
         font-size: constants.$header-font-size;
-        font-weight: 600;
     }
 
     p {
         font-size: constants.$secondary-font-size;
-        font-weight: 600;
         text-transform: capitalize;
     }
 
     span {
-        font-weight: inherit;
         color: var(--secondary-text-color);
         transition: color 0.5s;
     }
@@ -29,8 +26,8 @@
     display: flex;
 
     > h2 {
-        font-size: constants.$temperature-font-size;
-        font-weight: 400;
+        font-size: 4.375em;
+        font-weight: 500;
     }
 
     > p {

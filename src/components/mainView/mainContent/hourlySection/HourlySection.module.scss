@@ -15,7 +15,6 @@
         font-size: constants.$secondary-font-size;
         cursor: pointer;
         padding-bottom: 2px;
-        font-weight: 600;
         color: var(--secondary-text-color);
         transition: color 0.5s, border 0.5s;
 
@@ -37,7 +36,6 @@
     text-align: center;
     color: var(--secondary-text-color);
     transition: color 0.5s;
-    font-weight: 600;
     font-size: constants.$label-font-size;
 }
 

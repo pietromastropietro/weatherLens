@@ -10,7 +10,7 @@
     display: grid;
     place-content: center;
 }
-.errorDialog {    
+.dialog {    
     background-color:var(--primary-color);
     border-radius: constants.$secondary-border-radius;
     padding: 1.3em;
@@ -28,7 +28,6 @@
     
     h2 {
         margin: 1.3rem 0;
-        font-weight: 600;
         font-size: constants.$secondary-font-size;
         text-transform: uppercase;
     }
@@ -43,7 +42,6 @@
         width: fit-content;
         background: none;
         font: inherit;
-        font-weight: 600;
         cursor: pointer;
         padding-bottom: 2px;
         transition: 0.2s;

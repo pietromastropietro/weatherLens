@@ -9,7 +9,6 @@
     margin-right: 10px; // margin to add space from element to scrollbar
     border-radius: constants.$secondary-border-radius;
     background-color: var(--primary-color);
-    font-weight: 600;
     transition: background-color 0.5s;
     
     .forecast {
@@ -27,7 +26,6 @@
     }
 
     span {
-        font-weight: inherit;
         color: var(--secondary-text-color);
         text-transform: lowercase;
         transition: color 0.5s;

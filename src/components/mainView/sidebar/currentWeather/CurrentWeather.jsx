@@ -9,7 +9,7 @@ import { Context } from 'App';
 
 // Components import
 import UnitsSwitch from 'components/unitsSwitch/UnitsSwitch';
-import Icon from 'components/icon/Icon';
+import WeatherIcon from 'components/weatherIcon/WeatherIcon';
 
 // Style import
 import style from './CurrentWeather.module.scss';
@@ -40,7 +40,7 @@ const CurrentWeather = () => {
 
             <div className={style.weather}>
                 <figure>
-                    <Icon name={icon} />
+                    <WeatherIcon name={icon} />
                 </figure>
 
                 <div className={style.temp}>

@@ -1,15 +1,14 @@
 // Utils import
-import useImage from 'services/helper/useImage';
+import useImage from 'services/hooks/useImage';
 
 // Static files import
 import imageNotFound from 'static/images/image-not-found.svg';
 
 // Style import
-import { icon } from './Icon.module.scss';
+import { icon } from './WeatherIcon.module.scss';
 
-const Icon = ({ name }) => {
-
-    // codes to associate icon code from API to local icon names
+const WeatherIcon = ({ name }) => {
+    // Codes to associate icon codes from API to local icon names
     const iconCodes = {
         "01d": "01d", 
         "01n": "01n",
@@ -29,17 +28,25 @@ const Icon = ({ name }) => {
         "13n": "13",
         "50d": "50",
         "50n": "50"
-    }
+    };
     
-    const { image, error } = useImage(iconCodes[name]);
+    const { image, loading, error } = useImage(iconCodes[name]);
+
+    let src;
+
+    if (loading || error) {
+        src = imageNotFound;
+    } else {
+        src = image;
+    }
 
     return (
         <img
             className={icon}
-            src={error ? imageNotFound : image}
+            src={src}
             alt=""
         />
     );
 };
 
-export default Icon;
+export default WeatherIcon;

@@ -1,5 +1,5 @@
 // Components import
-import Icon from 'components/icon/Icon';
+import WeatherIcon from 'components/weatherIcon/WeatherIcon';
 
 // Style import
 import style from './WeekDay.module.scss'
@@ -21,7 +21,7 @@ const WeekDay = ({ dayData }) => {
             <p>{day}</p>
 
             <figure>
-                <Icon name={icon} />
+                <WeatherIcon name={icon} />
             </figure>
 
             <p>{`${temps.max}°`} <span>{`${temps.min}°`}</span></p>

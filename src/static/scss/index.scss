@@ -1,34 +1,5 @@
 @use 'static/scss/constants';
 
-/* THEMES */
-[data-theme='light'] {
-    --page-bg: #d6d7da;
-    --primary-color: #ffffff;
-    --secondary-color: #f6f6f8;
-    --primary-text-color: #000000;
-    --secondary-text-color: #b6b6b6;
-}
-
-[data-theme='dark'] {
-    // v1
-    // --page-bg: #121212;
-    // --primary-color: #272727;
-    // --secondary-color: #1b1b1b;
-    // --primary-text-color: #ffffff;
-    // --secondary-text-color: #e6e6e6;
-
-    // v2
-    --page-bg: #363636;
-    --primary-color: #282828;
-    --secondary-color: #222222;
-    --primary-text-color: #f1f1f1;
-    --secondary-text-color: #6e6d6d; //5e5d5d  //a09fa0
-    
-    img {
-        // opacity: 0.9;
-    }
-}
-
 /* STYLE RESETS */
 html, body, p, h1, h2, h3, h4, h5, h6, button, figure, legend, span, input, fieldset, ul, li, dl, dt, dd {
     margin: 0;
@@ -43,10 +14,38 @@ a {
     color: inherit;
 }
 h1, h2, h3, h4, h5, h6, figure, legend, span {
-    font-weight: normal;
+    font-weight: 600;
+}
+
+/* GLOBAL */
+html, body, #root {
+    height: 100%;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* THEMES */
+[data-theme='light'] {
+    --page-bg: #d6d7da;
+    --primary-color: #ffffff;
+    --secondary-color: #f6f6f8;
+    --primary-text-color: #000000;
+    --secondary-text-color: #b6b6b6;
+}
+
+[data-theme='dark'] {
+    --page-bg: #363636;
+    --primary-color: #282828;
+    --secondary-color: #222222;
+    --primary-text-color: #f1f1f1;
+    --secondary-text-color: #6e6d6d;
 }
 
 /* SCROLLBAR */
+
 // Firefox
 * {
     scrollbar-width: thin;
@@ -68,13 +67,4 @@ h1, h2, h3, h4, h5, h6, figure, legend, span {
     &:hover {
         background-color: #c9c9c9;
     }
-}
-
-/* GLOBAL */
-html, body, #root {
-    height: 100%;
-}
-body {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
 }

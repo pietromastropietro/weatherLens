@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 
 const useImage = (fileName) => {
-    const [error, setError] = useState(null)
     const [image, setImage] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         const fetchImage = async () => {
@@ -11,12 +12,14 @@ const useImage = (fileName) => {
                 setImage(response.default)
             } catch (err) {
                 setError(err)
+            } finally {
+                setLoading(false)
             }
         }
         fetchImage()
     }, [fileName])
 
-    return { error, image }
+    return { image, loading, error }
 }
 
 export default useImage

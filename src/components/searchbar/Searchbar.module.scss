@@ -6,7 +6,6 @@ $border-radius: 20px;
     background-color: var(--secondary-color);
     position: relative;
     border-radius: $border-radius;
-    font-weight: 500;
     width: 100%;
     transition: background 0.5s;
 
@@ -27,6 +26,7 @@ $border-radius: 20px;
         outline: none;
         background-color: transparent;
         font: inherit;
+        font-weight: 500;
         overflow: hidden;
         transition: color 0.5s;
     }
@@ -44,7 +44,6 @@ $border-radius: 20px;
     height: 0;
     row-gap: 10px;
     border-radius: 0 0 $border-radius $border-radius;
-    font-weight: 600;
     z-index: 1;
     transition: background 0.5s;
 
