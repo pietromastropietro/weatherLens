@@ -41,7 +41,7 @@ const Sidebar = () => {
             </div>
 
             <div className={style.aboutBtn} onClick={toggleAboutDialog}>
-                About WeatherApp
+                About WeatherLens.
             </div>
 
             {aboutDialogVisibility &&

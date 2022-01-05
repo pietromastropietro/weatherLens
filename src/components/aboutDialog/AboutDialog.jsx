@@ -19,7 +19,7 @@ const AboutDialog = ({ toggleAboutDialog }) => {
                 </div>
 
                 <div>
-                    <h1>WeatherApp</h1>
+                    <h1>WeatherLens.</h1>
                     <h3>By Pietro Mastropietro</h3>
                 </div>
 

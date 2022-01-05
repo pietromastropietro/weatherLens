@@ -37,7 +37,7 @@ const MainContent = () => {
             <HourlyForecast />
 
             <div className={style.aboutBtn} onClick={toggleAboutDialog}>
-                About WeatherApp
+                About WeatherLens.
             </div>
 
             {aboutDialogVisibility &&
