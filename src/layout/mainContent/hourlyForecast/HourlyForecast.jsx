@@ -5,12 +5,12 @@ import { useState, useContext } from 'react';
 import { Context } from 'App';
 
 // Components import
-import HourlyElement from './hourlyElement/HourlyElement';
+import HourlyForecastListElement from './hourlyForecastListElement/HourlyForecastListElement';
 
 // Style import
-import style from './HourlySection.module.scss'
+import style from './HourlyForecast.module.scss'
 
-const HourlySection = () => {
+const HourlyForecast = () => {
     const { unit, weatherData } = useContext(Context);
 
     // Calculate how many hours remain until midnight (first element of weatherData.hourly refers to the hour in which the request has been made)
@@ -26,7 +26,7 @@ const HourlySection = () => {
     const [day, setDay] = useState("today");
 
     return (
-        <div className={style.hourlySection}>
+        <div className={style.hourlyForecast}>
             <div className={style.heading}>
                 <div className={style.days}>
                     <h1
@@ -52,7 +52,7 @@ const HourlySection = () => {
 
             <ul>
                 {hourlyWeather[day].map(hourlyData =>
-                    <HourlyElement
+                    <HourlyForecastListElement
                         key={hourlyData.dt}
                         hourlyData={hourlyData}
                         unit={unit}
@@ -63,4 +63,4 @@ const HourlySection = () => {
     );
 }
 
-export default HourlySection;
+export default HourlyForecast;

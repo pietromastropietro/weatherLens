@@ -1,13 +1,13 @@
 // Utils import
-import { degToDirection } from 'services/helper/degToDirection';
+import { degToDirection } from 'services/utils/degToDirection';
 
 // Components import
 import WeatherIcon from 'components/weatherIcon/WeatherIcon';
 
 // Style import
-import style from './HourlyElement.module.scss'
+import style from './HourlyForecastListElement.module.scss'
 
-const HourlyElement = ({ hourlyData, unit }) => {
+const HourlyForecastListElement = ({ hourlyData, unit }) => {
     const temperature = hourlyData.temp.toFixed(1);
     const hour = new Date(hourlyData.dt * 1000).getHours();
     const forecast = hourlyData.weather[0].description;
@@ -27,7 +27,7 @@ const HourlyElement = ({ hourlyData, unit }) => {
     }
 
     return (
-        <li className={style.hourlyElement}>
+        <li className={style.listElement}>
             <p>{hour}<span>:00</span></p>
             <figure>
                 <WeatherIcon name={icon} />
@@ -40,4 +40,4 @@ const HourlyElement = ({ hourlyData, unit }) => {
     );
 }
 
-export default HourlyElement;
+export default HourlyForecastListElement;

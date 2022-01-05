@@ -8,13 +8,13 @@ import { Context } from 'App';
 import WeekDay from './weekDay/WeekDay.jsx';
 
 // Style import
-import style from './WeekSection.module.scss';
+import style from './WeekForecast.module.scss';
 
-const WeekSection = () => {
+const WeekForecast = () => {
     const { weatherData } = useContext(Context);
 
     return (
-        <div className={style.weekSection}>
+        <div className={style.weekForecast}>
             <h1>Week</h1>
 
             <div className={style.daysContainer}>
@@ -29,4 +29,4 @@ const WeekSection = () => {
     )
 }
 
-export default WeekSection;
+export default WeekForecast;

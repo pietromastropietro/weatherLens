@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+<div align="center">
+  <a href="https://github.com/pietromastropietro/weather-react">
+    <!-- <img src="" alt="WeatherApp logo" width="100" height="100"> -->
+  </a>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
 
-In the project directory, you can run:
+<div align="center">
+  <br />
+  <a href=""><strong>Visit the App »</strong></a>
+  <br />
+  <a href="https://github.com/pietromastropietro/weather-react/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D+">Report a Bug</a>
+  ·
+  <a href="https://github.com/pietromastropietro/weather-react/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=%5BFEAT%5D+">Request a Feature</a>
+  <br />
+  <br />
+</div>
 
-### `npm start`
+<!-- ![App screenshot](https://i.ibb.co/Dpv6tb5/screenshot.png) -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Stack logos](https://i.ibb.co/d7kmfML/logos.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<details open="open">
+<summary>Table of Contents</summary>
 
-### `npm test`
+- [About](#about)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Usage](#usage)
+- [Support and Contributing](#support-and-contributing)
+- [Security](#security)
+- [License](#license)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</details>
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## About
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A simple and straightforward weather forecast app built with Javascript, React and Sass.
+Other libraries also used are [axios](https://axios-http.com/) for HTTP requests and [date-fns](https://date-fns.org/) to simplify date formatting.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Users can search for any city in the World, and get all weather info needed, such as: 
 
-### `npm run eject`
+- Current conditions
+- Current day's wind, rain, and temperature averages
+- Hourly forecast up to 48 hours with temperature, wind speed and rain quantity
+- Weekly projection with forecast and highs and lows
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Users can also choose between light and dark theme, and switch from metric system (celsius degrees, km/h) to imperial (fahrenheit, mp/h).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<details>
+<summary>Screenshots</summary>
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+</details>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Getting Started
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Make sure you have [Node.js](https://nodejs.org/en/) version >= 10 installed on your machine to work on this app.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Open the command prompt where you wish to save the project and clone the repository with:
+    
+    `git clone https://github.com/pietromastropietro/weather-react`
 
-### Code Splitting
+- `cd` inside the project folder and install the required dependencies with:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    `npm install`
 
-### Analyzing the Bundle Size
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Open the command prompt inside the project folder and run the app with:
 
-### Making a Progressive Web App
+    `npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- App should now be running on `https://localhost:4000`
 
-### Advanced Configuration
+## Support and Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Feel free to reach me out at one of the following places:
 
-### Deployment
+- [GitHub issues](https://github.com/pietromastropietro/weather-react/issues/)
+- Contact options listed on [my GitHub profile](https://github.com/pietromastropietro)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+If you want to say **thank you** or/and support my development feel free to add a [GitHub Star](https://github.com/pietromastropietro/weather-react) to the project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Security
+
+WeatherApp follows good practices of security, but 100% security cannot be assured.
+WeatherApp is provided **"as is"** without any **warranty**. Use at your own risk.
+
+
+### Reporting a Vulnerability
+
+If there are any vulnerabilities in **WeatherApp**, don't hesitate to _report them_ using any of the methods listed [here](https://github.com/pietromastropietro/weather-react#support-and-contributing).
+Please **do not disclose the vulnerability publicly** until a fix is released.
+
+## License
+
+This project is licensed under the **[MIT license](LICENSE)**.

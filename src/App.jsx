@@ -6,8 +6,8 @@ import { defaultData } from './default.js'
 import axios from 'axios';
 
 // Components import
-import MainContent from './components/mainView/mainContent/MainContent'
-import Sidebar from './components/mainView/sidebar/Sidebar';
+import MainContent from './layout/mainContent/MainContent'
+import Sidebar from './layout/sidebar/Sidebar';
 import LoadingSpinner from 'components/loadingSpinner/LoadingSpinner';
 import ErrorDialog from 'components/errorDialog/ErrorDialog';
 import Overlay from 'components/overlay/Overlay.jsx';

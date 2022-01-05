@@ -13,9 +13,9 @@ import windIcon from 'static/images/wind.png'
 import WeatherIcon from 'components/weatherIcon/WeatherIcon';
 
 // Style import
-import style from './WeatherStats.module.scss';
+import style from './TodayAverages.module.scss';
 
-const Weatherstats = () => {
+const TodayAverages = () => {
     const { unit, weatherData } = useContext(Context);
 
     const temps = {
@@ -37,16 +37,16 @@ const Weatherstats = () => {
     }
 
     return (
-        <div className={style.weatherStats}>
+        <div className={style.todayHighlights}>
 
-            <div className={style.stat}>
+            <div className={style.average}>
                 <div>
                     <WeatherIcon name={icon} />
                     <p className={style.forecast}>{forecast}</p>
                 </div>
             </div>
 
-            <div className={style.stat}>
+            <div className={style.average}>
                 <div>
                     <img src={tempsIcon} alt="" />
                     <p>High / Low</p>
@@ -55,7 +55,7 @@ const Weatherstats = () => {
                 <p>{temps.max}° <span className={style.minTemp}>{temps.min}°</span></p>
             </div>
 
-            <div className={style.stat}>
+            <div className={style.average}>
                 <div>
                     <img src={windIcon} alt="" />
                     <p>Wind <span>{unit === "metric" ? "km/h" : "mp/h"}</span></p>
@@ -64,7 +64,7 @@ const Weatherstats = () => {
                 <p>{wind}</p>
             </div>
 
-            <div className={style.stat}>
+            <div className={style.average}>
                 <div>
                     <img src={rainIcon} alt="" />
                     <p>Rain <span>mm</span></p>
@@ -76,4 +76,4 @@ const Weatherstats = () => {
     )
 }
 
-export default Weatherstats;
+export default TodayAverages;

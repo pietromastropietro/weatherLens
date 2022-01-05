@@ -5,16 +5,16 @@ import { useContext, useState } from 'react';
 import { Context } from 'App';
 
 // Components import
-import HourlySection from './hourlySection/HourlySection';
-import WeekSection from './weekSection/WeekSection';
-import UnitsSwitch from 'components/unitsSwitch/UnitsSwitch';
-import AboutDialog from '../../aboutDialog/AboutDialog';
+import Searchbar from '../../components/searchbar/Searchbar';
+import CurrentWeather from './currentWeather/CurrentWeather';
+import TodayAverages from './todayAverages/TodayAverages';
+import AboutDialog from '../../components/aboutDialog/AboutDialog';
 import ThemeSwitch from 'components/themeSwitch/ThemeSwitch';
 
 // Style import
-import style from './MainContent.module.scss'
+import style from './Sidebar.module.scss';
 
-const MainContent = () => {
+const Sidebar = () => {
     const { overlay, setOverlay } = useContext(Context);
 
     const [aboutDialogVisibility, setAboutDialogVisibility] = useState(false);
@@ -25,16 +25,20 @@ const MainContent = () => {
     }
 
     return (
-        <div className={style.mainContent}>
-            <div>
-                <div className={style.header}>
-                    <UnitsSwitch />
+        <div className={style.sidebar}>
+            <div className={style.searchbarAndThemeSwitchContainer}>
+                <Searchbar />
+
+                <div className={style.themeSwitchContainer}>
                     <ThemeSwitch />
                 </div>
-                <WeekSection />
             </div>
 
-            <HourlySection />
+            <div>
+                <CurrentWeather />
+                <div className={style.separator}></div>
+                <TodayAverages />
+            </div>
 
             <div className={style.aboutBtn} onClick={toggleAboutDialog}>
                 About WeatherApp
@@ -44,8 +48,7 @@ const MainContent = () => {
                 <AboutDialog toggleAboutDialog={toggleAboutDialog} />
             }
         </div>
-
     );
 }
 
-export default MainContent;
+export default Sidebar;

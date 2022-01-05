@@ -1,12 +1,12 @@
 @use 'static/scss/constants';
 
-.weatherStats {
+.todayAverages {
     display: flex;
     flex-direction: column;
     row-gap: 1.25rem;
 }
 
-.stat {
+.average {
     display: flex;
     justify-content: space-between;
 
@@ -37,7 +37,7 @@
 }
 
 @media (max-width: constants.$breakpoint-mobile) {
-    .weatherStats {
+    .todayAverages {
         display: none;
     }
 }

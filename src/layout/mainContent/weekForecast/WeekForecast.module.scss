@@ -1,6 +1,6 @@
 @use 'static/scss/constants';
 
-.weekSection {
+.weekForecast {
     h1 {
         width: fit-content;
         padding-bottom: 2px;
@@ -18,7 +18,7 @@
 }
 
 @media (max-width: constants.$breakpoint-mobile) {
-    .weekSection {
+    .weekForecast {
         h1 {
             margin-bottom: 10px;
         }
