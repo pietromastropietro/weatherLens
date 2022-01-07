@@ -1,7 +1,7 @@
 {
   "name": "weatherlens",
   "version": "0.1.0",
-  "homepage": "https://pietromastropietro.github.io/",
+  "homepage": "https://pietromastropietro.github.io/weatherLens/",
   "private": true,
   "dependencies": {
     "axios": "^0.24.0",
@@ -12,8 +12,9 @@
     "sass": "^1.44.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
