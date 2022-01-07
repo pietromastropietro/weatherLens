@@ -37,7 +37,7 @@ const TodayAverages = () => {
     }
 
     return (
-        <div className={style.todayHighlights}>
+        <div className={style.todayAverages}>
 
             <div className={style.average}>
                 <div>

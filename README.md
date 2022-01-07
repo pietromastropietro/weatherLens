@@ -1,14 +1,18 @@
 <div align="center">
 
-![App logo](https://i.ibb.co/Q6mTN8f/Immagine.png)
+![App logo](https://i.ibb.co/jkJCm8p/logo.png)
 
 </div>
 
 ---
 
+<div align="center">
+
+### WeatherLens is a responsive weather forecast app built with React and Sass.
+
+</div>
 
 <div align="center">
-  <br />
   <a href="">Visit the App</a>
   ·
   <a href="https://github.com/pietromastropietro/weather-react/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D+">Report a Bug</a>
@@ -18,7 +22,7 @@
   <br />
 </div>
 
-<!-- ![App screenshot](https://i.ibb.co/Dpv6tb5/screenshot.png) -->
+![App screenshot](https://i.ibb.co/N14zBRS/screen1.png)
 
 ![Stack logos](https://i.ibb.co/d7kmfML/logos.png)
 
@@ -39,8 +43,8 @@
 
 ## About
 
-A simple and straightforward weather forecast app built with Javascript, React and Sass.
-Other libraries also used are [axios](https://axios-http.com/) for HTTP requests and [date-fns](https://date-fns.org/) to simplify date formatting.
+A simple, straightforward and fully responsive weather forecast app built with Javascript, React and Sass.
+Other libraries also used are [axios](https://axios-http.com/) for HTTP requests and [date-fns](https://date-fns.org/) to simplify date formatting. Weather data provided by [OpenWeatherMap](https://openweathermap.org/api) APIs. 
 
 Users can search for any city in the World, and get all weather info needed, such as: 
 
@@ -55,6 +59,7 @@ Users can also choose between light and dark theme, and switch from metric syste
 <summary>Screenshots</summary>
 <br>
 
+![screenshot](https://i.ibb.co/N9JRkRt/screen2.png)
 </details>
 
 ## Getting Started

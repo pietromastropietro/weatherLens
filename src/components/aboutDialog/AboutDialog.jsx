@@ -10,10 +10,10 @@ const AboutDialog = ({ toggleAboutDialog }) => {
         <div className={style.container}>
             <div className={style.dialog}>
                 <div className={style.icons}>
-                    <a href="https://github.com/pietromastropietro" target="_blank" rel="noreferrer">
+                    <a href="https://github.com/pietromastropietro/weatherLens" target="_blank" rel="noreferrer">
                         <img src={githubLogo} alt="github-logo" />
                     </a>
-                    <a href="https://github.com/pietromastropietro" target="_blank" rel="noreferrer">
+                    <a href="https://www.linkedin.com/in/pietro-mastropietro-8470bb207" target="_blank" rel="noreferrer">
                         <img src={linkedin} alt="linkedin-logo" />
                     </a>
                 </div>

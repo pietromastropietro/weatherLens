@@ -35,5 +35,6 @@
 @media (max-width: constants.$breakpoint-mobile) {
     .listElement {
         column-gap: 0.2em;
+        margin-right: 0;
     }
 }
