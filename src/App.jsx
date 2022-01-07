@@ -44,7 +44,7 @@ const App = () => {
 				setLoading(false);
 			};
 		};
-		// fetchData(location.lat, location.lon);
+		fetchData(location.lat, location.lon);
 	}, [unit, location]); // whenever unit or location changes, fetch the appropriate data
 
 	return (

@@ -13,7 +13,7 @@
 </div>
 
 <div align="center">
-  <a href="">Visit the App</a>
+  <a href="https://pietromastropietro.github.io/weatherLens">Visit the App</a>
   ·
   <a href="https://github.com/pietromastropietro/weatherLens/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D+">Report a Bug</a>
   ·
