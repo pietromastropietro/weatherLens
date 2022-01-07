@@ -15,9 +15,9 @@
 <div align="center">
   <a href="">Visit the App</a>
   ·
-  <a href="https://github.com/pietromastropietro/weather-react/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D+">Report a Bug</a>
+  <a href="https://github.com/pietromastropietro/weatherLens/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D+">Report a Bug</a>
   ·
-  <a href="https://github.com/pietromastropietro/weather-react/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=%5BFEAT%5D+">Request a Feature</a>
+  <a href="https://github.com/pietromastropietro/weatherLens/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=%5BFEAT%5D+">Request a Feature</a>
   <br />
   <br />
 </div>
@@ -53,12 +53,13 @@ Users can search for any city in the World, and get all weather info needed, suc
 - Hourly forecast up to 48 hours with temperature, wind speed and rain quantity
 - Weekly projection with forecast and highs and lows
 
-Users can also choose between light and dark theme, and switch from metric system (celsius degrees, km/h) to imperial (fahrenheit, mp/h).
+Users can also choose between light and dark theme, and switch from metric system (celsius degrees, km/h) to imperial (fahrenheit degrees, mp/h).
 
 <details>
 <summary>Screenshots</summary>
 <br>
-
+Light theme
+  
 ![screenshot](https://i.ibb.co/N9JRkRt/screen2.png)
 </details>
 
@@ -70,7 +71,7 @@ Users can also choose between light and dark theme, and switch from metric syste
 
 - Open the command prompt where you wish to save the project and clone the repository:
     
-  `git clone https://github.com/pietromastropietro/weather-react`
+  `git clone https://github.com/pietromastropietro/weatherLens`
 
 - Move inside the project folder and install the required dependencies:
 
@@ -89,17 +90,17 @@ Users can also choose between light and dark theme, and switch from metric syste
 
     `npm start`
 
-- App should now be running on `https://localhost:4000`
+- App should now be running on `https://localhost:3000`
 
 ## Support and Contributing
 
 Feel free to reach me out at one of the following places:
 
-- [GitHub issues](https://github.com/pietromastropietro/weather-react/issues/)
+- [GitHub issues](https://github.com/pietromastropietro/weatherLens/issues/)
 - Contact options listed on [my GitHub profile](https://github.com/pietromastropietro)
 
 
-If you want to say **thank you** or/and support my development feel free to add a [GitHub Star](https://github.com/pietromastropietro/weather-react) to the project.
+If you want to say **thank you** or/and support my development feel free to add a [GitHub Star](https://github.com/pietromastropietro/weatherLens) to the project.
 
 ## Security
 
@@ -109,7 +110,7 @@ WeatherLens is provided **"as is"** without any **warranty**. Use at your own ri
 
 ### Reporting a Vulnerability
 
-If there are any vulnerabilities in **WeatherLens**, don't hesitate to _report them_ using any of the methods listed [here](https://github.com/pietromastropietro/weather-react#support-and-contributing).
+If there are any vulnerabilities in **WeatherLens**, don't hesitate to _report them_ using any of the methods listed [here](https://github.com/pietromastropietro/weatherLens#support-and-contributing).
 Please **do not disclose the vulnerability publicly** until a fix is released.
 
 ## License
