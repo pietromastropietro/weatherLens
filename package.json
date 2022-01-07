@@ -1,7 +1,7 @@
 {
-  "name": "weather-react",
+  "name": "weatherlens",
   "version": "0.1.0",
-  "homepage": "https://pietromastropietro.github.io/weatherLens",
+  "homepage": "https://pietromastropietro.github.io/",
   "private": true,
   "dependencies": {
     "axios": "^0.24.0",
