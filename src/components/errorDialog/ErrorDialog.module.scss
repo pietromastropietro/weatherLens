@@ -35,6 +35,13 @@
     p {
         font-weight: 500;
     }
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--secondary-text-color)
+        }
+    }
     
     button {
         margin-top: 3em;

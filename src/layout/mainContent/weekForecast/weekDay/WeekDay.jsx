@@ -1,11 +1,11 @@
 // Components import
 import WeatherIcon from 'components/weatherIcon/WeatherIcon';
 
-// Style import
-import style from './WeekDay.module.scss'
-
 // Utils import
 import { format } from 'date-fns';
+
+// Style import
+import style from './WeekDay.module.scss'
 
 const WeekDay = ({ dayData }) => {
     const day = format(new Date(dayData.dt * 1000), 'EEE');

@@ -44,7 +44,6 @@ const MainContent = () => {
                 <AboutDialog toggleAboutDialog={toggleAboutDialog} />
             }
         </div>
-
     );
 }
 

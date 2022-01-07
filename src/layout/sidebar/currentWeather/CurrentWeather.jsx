@@ -43,7 +43,7 @@ const CurrentWeather = () => {
                     <WeatherIcon name={icon} />
                 </figure>
 
-                <div className={style.temp}>
+                <div className={style.temperature}>
                     <h2>{temperature}</h2>
                     <p>°{unit === "metric" ? "C" : "F"}</p>
                 </div>

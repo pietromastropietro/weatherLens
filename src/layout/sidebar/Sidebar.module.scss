@@ -18,7 +18,8 @@
 
 @media (min-width: constants.$breakpoint-desktop) {
     .sidebar {
-        width: calc(30% - 100px); // subtract padding to avoid element stealing space from 'main content' element
+        box-sizing: border-box;
+        width: 30%;
         padding: 50px;
         border-radius: constants.$primary-border-radius 0 0 constants.$primary-border-radius;
     }

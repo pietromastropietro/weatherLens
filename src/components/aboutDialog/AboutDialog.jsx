@@ -34,7 +34,6 @@ const AboutDialog = ({ toggleAboutDialog }) => {
                 <button onClick={toggleAboutDialog}>Close</button>
             </div>
         </div>
-
     )
 }
 

@@ -1,4 +1,4 @@
-// Utils import
+// Hooks import
 import useImage from 'services/hooks/useImage';
 
 // Static files import
